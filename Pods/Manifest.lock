@@ -1,0 +1,30 @@
+PODS:
+  - Alamofire (4.9.1)
+  - Kingfisher (5.14.0):
+    - Kingfisher/Core (= 5.14.0)
+  - Kingfisher/Core (5.14.0)
+  - Reusable (4.1.1):
+    - Reusable/Storyboard (= 4.1.1)
+    - Reusable/View (= 4.1.1)
+  - Reusable/Storyboard (4.1.1)
+  - Reusable/View (4.1.1)
+
+DEPENDENCIES:
+  - Alamofire (= 4.9.1)
+  - Kingfisher
+  - Reusable
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - Kingfisher
+    - Reusable
+
+SPEC CHECKSUMS:
+  Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
+  Kingfisher: 7b64389a43139c903ec434788344c288217c792d
+  Reusable: 53a9acf5c536f229b31b5865782414b508252ddb
+
+PODFILE CHECKSUM: 02760b2f8155d0b489c033ceac1ab5b2eaa92162
+
+COCOAPODS: 1.9.3
