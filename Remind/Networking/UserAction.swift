@@ -96,4 +96,14 @@ extension UserAction: APIAction {
     var encoding: ParameterEncoding {
         return URLEncoding.default
     }
+    
+    var timeoutIntervalForRequest: TimeInterval? {
+        switch self {
+        case .generate(_, _):
+            return 35
+        default:
+            return nil
+        }
+    }
+    
 }
