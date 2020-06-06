@@ -16,7 +16,7 @@ enum UserAction {
     case join(classroomId: Int)
     case uploadImage(name: String, content: String, userId: Int)
     case image(id: Int)
-    case generate(background: Data, classroomId: Int)
+    case generate(background: String, classroomId: Int)
     case explore
 }
 

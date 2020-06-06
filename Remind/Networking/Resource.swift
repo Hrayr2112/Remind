@@ -137,7 +137,7 @@ class ConvertedImageResource: Resource<ConvertedImageResponse> {
 
 class GenerateResource: Resource<GenerateResponse> {
     
-    init(background: Data, classroomId: Int) {
+    init(background: String, classroomId: Int) {
         super.init(request: UserAction.generate(background: background, classroomId: classroomId)) { response -> Result<GenerateResponse> in
             if let data = response as? Data {
                 do {

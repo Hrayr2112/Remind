@@ -322,11 +322,20 @@ extension ClassroomViewController: UIImagePickerControllerDelegate, UINavigation
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         picker.dismiss(animated: true, completion: nil)
-        guard let image = info[UIImagePickerController.InfoKey.editedImage] as? UIImage,
-            let base64 = image.pngData()?.base64EncodedString() else { return }
+        guard
+            let image = info[UIImagePickerController.InfoKey.editedImage] as? UIImage,
+            let base64 = image.pngData()?.base64EncodedString(),
+            let classroomId = UserManager.shared.classroomId else { return }
         
         
-        // HRO DO generate REQUEST WITH base64 and classroomID
+        RequestService().generate(background: base64, classroomId: classroomId) { result in
+            switch result {
+            case let .success(response):
+                self.photosViewModels.append(PhotoCollectionViewCellModel(data: response.image))
+            case let .failure(error):
+                self.presentErrorAlert()
+            }
+        }
     }
     
 }

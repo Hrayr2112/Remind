@@ -49,7 +49,7 @@ struct RequestService {
         api.request(ConvertedImageResource(id: id), completion: completion)
     }
     
-    func generate(background: Data,
+    func generate(background: String,
                   classroomId: Int,
                   _ completion: @escaping (Result<GenerateResponse>) -> Void) {
         api.request(GenerateResource(background: background, classroomId: classroomId), completion: completion)
