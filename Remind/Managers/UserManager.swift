@@ -73,6 +73,10 @@ class UserManager {
         UserDefaults.standard.setValue(token, forKey: "token")
     }
     
+    func set(images: [Image]) {
+        return UserDefaults.standard.setValue(images, forKey: "images")
+    }
+    
     func set(imageId: Int) {
         UserDefaults.standard.setValue(imageId, forKey: "image_id")
     }

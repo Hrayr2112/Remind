@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class MeViewController: UIViewController {
     
@@ -43,11 +44,11 @@ class MeViewController: UIViewController {
     }
     
     private func fillData() {
-        // load user info from userDefaults
-        
         usernameLabel.text = UserManager.shared.username
         emailLabel.text = UserManager.shared.email
-//        avatarImageView.kf.setImage(with: UserManager.shared.images?.first?.imageUrl)
+        if let imageUrl = UserManager.shared.images?.first?.imageUrl {
+            avatarImageView.setImage(with: URL(string: imageUrl))
+        }
     }
     
     // MARK: - Actions
@@ -60,8 +61,16 @@ class MeViewController: UIViewController {
                 let imageBase64 = image.pngData()?.base64EncodedString() else { return }
             RequestService().uploadImage(name: username.appending(UUID().uuidString).appending(".png"),
                                          content: imageBase64,
-                                         userId: userId) { uploadImageResponse in
-                                            print("uploaded")
+                                         userId: userId)
+            { uploadImageResponse in
+                switch uploadImageResponse {
+                case .success(let response):
+                    UserManager.shared.set(images: [response.image])
+                case .failure(_):
+                    let errorAc = UIAlertController(title: "Please enter a classroom name", message: nil, preferredStyle: .alert)
+                    errorAc.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                    self.present(errorAc, animated: true, completion: nil)
+                }
             }
             self.avatarImageView.image = image
         }
