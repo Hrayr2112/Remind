@@ -92,7 +92,7 @@
                                         <rect key="frame" x="20" y="0.0" width="187" height="36"/>
                                         <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="14"/>
                                         <state key="normal" title="People">
-                                            <color key="titleColor" name="main"/>
+                                            <color key="titleColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                         </state>
                                         <state key="disabled">
                                             <color key="titleColor" red="0.20784313730000001" green="0.20784313730000001" blue="0.20784313730000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -105,7 +105,7 @@
                                         <rect key="frame" x="207" y="0.0" width="187" height="36"/>
                                         <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="14"/>
                                         <state key="normal" title="Photos">
-                                            <color key="titleColor" name="main"/>
+                                            <color key="titleColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                         </state>
                                         <state key="disabled">
                                             <color key="titleColor" red="0.20784313730000001" green="0.20784313730000001" blue="0.20784313730000001" alpha="1" colorSpace="calibratedRGB"/>

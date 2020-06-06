@@ -63,13 +63,7 @@ class ClassroomViewController: UIViewController {
     private func configureTopBarForSelectedTab(animated: Bool) {
         isAnimating = true
         tabLineLeadingConstraint.constant = selectedTab == .people ? peopleButton.frame.origin.x : photosButton.frame.origin.x
-        let selectedColor = UIColor.main
-        let unselectedColor = UIColor.main.withAlphaComponent(0.5)
         UIView.animate(withDuration: animated ? 0.3 : 0, animations: {
-            self.peopleButton.setTitleColor(self.selectedTab == .people ? selectedColor : unselectedColor,
-                                            for: .normal)
-            self.photosButton.setTitleColor(self.selectedTab == .photos ? selectedColor : unselectedColor,
-                                            for: .normal)
             self.view.layoutIfNeeded()
         }) { (success) in
             self.isAnimating = false
