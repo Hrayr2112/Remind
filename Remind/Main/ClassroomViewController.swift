@@ -48,6 +48,7 @@ class ClassroomViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = "Classroom"
         configureTableView()
         configureCollectionView()
     }
@@ -83,6 +84,7 @@ class ClassroomViewController: UIViewController {
     // MARK: - Configurations
     
     private func configureTableView() {
+        peopleTableView.separatorStyle = .singleLine
         peopleTableView.delegate = self
         peopleTableView.dataSource = self
         

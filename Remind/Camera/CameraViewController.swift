@@ -14,6 +14,7 @@ class CameraViewController: UIViewController {
     let session = CKFPhotoSession()
     
     @IBOutlet weak var cameraContainerView: UIView!
+    @IBOutlet weak var posesScrollView: UIScrollView!
     @IBOutlet weak var captureButtonContainerView: UIView!
     @IBOutlet weak var captureButton: UIButton!
     
@@ -39,7 +40,7 @@ class CameraViewController: UIViewController {
         previewView.session = session
         
         previewView.translatesAutoresizingMaskIntoConstraints = false
-        cameraContainerView.addSubview(previewView)
+        cameraContainerView.insertSubview(previewView, belowSubview: posesScrollView)
         previewView.autopinEdgesToSuperviewEdges()
     }
     

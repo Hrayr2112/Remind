@@ -12,6 +12,7 @@
                 <outlet property="cameraContainerView" destination="msm-7F-KJx" id="Fs8-vy-OgS"/>
                 <outlet property="captureButton" destination="1Jq-bH-jUp" id="Hfn-JT-fVi"/>
                 <outlet property="captureButtonContainerView" destination="pZ2-bo-NIN" id="OUK-1j-ZeG"/>
+                <outlet property="posesScrollView" destination="5ai-e4-AzV" id="6Sk-T2-buE"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -22,7 +23,47 @@
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="msm-7F-KJx">
                     <rect key="frame" x="-20" y="0.0" width="454" height="754"/>
+                    <subviews>
+                        <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5ai-e4-AzV">
+                            <rect key="frame" x="0.0" y="0.0" width="454" height="754"/>
+                            <subviews>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pose1" translatesAutoresizingMaskIntoConstraints="NO" id="iCm-30-GV5">
+                                    <rect key="frame" x="0.0" y="0.0" width="454" height="754"/>
+                                </imageView>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pose2" translatesAutoresizingMaskIntoConstraints="NO" id="W2H-eD-Ns9">
+                                    <rect key="frame" x="454" y="0.0" width="454" height="754"/>
+                                </imageView>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pose3" translatesAutoresizingMaskIntoConstraints="NO" id="sXh-fF-6DW">
+                                    <rect key="frame" x="908" y="0.0" width="454" height="754"/>
+                                </imageView>
+                            </subviews>
+                            <constraints>
+                                <constraint firstItem="sXh-fF-6DW" firstAttribute="width" secondItem="iCm-30-GV5" secondAttribute="width" id="8jP-1g-gn1"/>
+                                <constraint firstItem="fNH-a8-HQ4" firstAttribute="bottom" secondItem="W2H-eD-Ns9" secondAttribute="bottom" id="F2e-B7-BBn"/>
+                                <constraint firstItem="iCm-30-GV5" firstAttribute="leading" secondItem="fNH-a8-HQ4" secondAttribute="leading" id="Gwi-u2-Kpy"/>
+                                <constraint firstItem="W2H-eD-Ns9" firstAttribute="top" secondItem="fNH-a8-HQ4" secondAttribute="top" id="JUr-C8-uGQ"/>
+                                <constraint firstItem="sXh-fF-6DW" firstAttribute="leading" secondItem="W2H-eD-Ns9" secondAttribute="trailing" id="Lcj-iR-HWX"/>
+                                <constraint firstItem="iCm-30-GV5" firstAttribute="bottom" secondItem="fNH-a8-HQ4" secondAttribute="bottom" id="WjK-f0-Gxp"/>
+                                <constraint firstItem="W2H-eD-Ns9" firstAttribute="width" secondItem="iCm-30-GV5" secondAttribute="width" id="dYu-cV-NQ8"/>
+                                <constraint firstItem="fNH-a8-HQ4" firstAttribute="bottom" secondItem="sXh-fF-6DW" secondAttribute="bottom" id="fxo-1L-dGO"/>
+                                <constraint firstItem="iCm-30-GV5" firstAttribute="top" secondItem="fNH-a8-HQ4" secondAttribute="top" id="l5e-MI-Td7"/>
+                                <constraint firstItem="W2H-eD-Ns9" firstAttribute="leading" secondItem="iCm-30-GV5" secondAttribute="trailing" id="mtY-Dk-eFl"/>
+                                <constraint firstItem="sXh-fF-6DW" firstAttribute="trailing" secondItem="fNH-a8-HQ4" secondAttribute="trailing" id="qGr-y7-Hxp"/>
+                                <constraint firstItem="sXh-fF-6DW" firstAttribute="top" secondItem="fNH-a8-HQ4" secondAttribute="top" id="qVF-fr-QWF"/>
+                            </constraints>
+                            <viewLayoutGuide key="contentLayoutGuide" id="fNH-a8-HQ4"/>
+                            <viewLayoutGuide key="frameLayoutGuide" id="FBT-09-vaw"/>
+                        </scrollView>
+                    </subviews>
                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="5ai-e4-AzV" firstAttribute="leading" secondItem="msm-7F-KJx" secondAttribute="leading" id="D2p-8S-dj1"/>
+                        <constraint firstItem="iCm-30-GV5" firstAttribute="width" secondItem="msm-7F-KJx" secondAttribute="width" id="Rw1-Yo-Wkg"/>
+                        <constraint firstItem="iCm-30-GV5" firstAttribute="height" secondItem="msm-7F-KJx" secondAttribute="height" id="RzW-fP-1Om"/>
+                        <constraint firstAttribute="bottom" secondItem="5ai-e4-AzV" secondAttribute="bottom" id="dop-f0-ZdE"/>
+                        <constraint firstItem="5ai-e4-AzV" firstAttribute="top" secondItem="msm-7F-KJx" secondAttribute="top" id="fnA-PQ-IZ0"/>
+                        <constraint firstAttribute="trailing" secondItem="5ai-e4-AzV" secondAttribute="trailing" id="nkd-pC-8Sj"/>
+                    </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uUg-3b-VS2">
                     <rect key="frame" x="0.0" y="754" width="414" height="108"/>
@@ -68,7 +109,12 @@
                 <constraint firstItem="uUg-3b-VS2" firstAttribute="top" secondItem="msm-7F-KJx" secondAttribute="bottom" id="nRc-Um-Drq"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <point key="canvasLocation" x="139" y="128"/>
+            <point key="canvasLocation" x="137.68115942028987" y="127.90178571428571"/>
         </view>
     </objects>
+    <resources>
+        <image name="pose1" width="356" height="507"/>
+        <image name="pose2" width="356" height="507"/>
+        <image name="pose3" width="356" height="507"/>
+    </resources>
 </document>

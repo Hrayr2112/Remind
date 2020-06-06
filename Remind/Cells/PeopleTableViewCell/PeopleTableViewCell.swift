@@ -13,7 +13,6 @@ class PeopleTableViewCell: UITableViewCell, NibReusable {
     
     // MARK: - UI
     
-    @IBOutlet private var avatarImageView: UIImageView!
     @IBOutlet private var usernameLabel: UILabel!
     @IBOutlet private var emailLabel: UILabel!
     @IBOutlet private var photoAddedView: UIView!
@@ -34,7 +33,6 @@ class PeopleTableViewCell: UITableViewCell, NibReusable {
     private func updateView(with viewModel: PeopleTableViewCellModel) {
         usernameLabel.text = viewModel.username
         emailLabel.text = viewModel.email
-        avatarImageView.image = viewModel.image
         
         if viewModel.id == 0 {
             photoAddedView.isHidden = false

@@ -26,6 +26,8 @@ class MeViewController: UIViewController {
     }
     
     private func configureViews() {
+        title = "Profile"
+        
         avatarImageView.layer.cornerRadius = avatarImageView.frame.width/2
         avatarImageView.layer.masksToBounds = true
         
