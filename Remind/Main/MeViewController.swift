@@ -58,7 +58,7 @@ class MeViewController: UIViewController {
             guard let username = UserManager.shared.username,
                 let userId = UserManager.shared.id,
                 let imageBase64 = image.pngData()?.base64EncodedString() else { return }
-            RequestService().uploadImage(name: username.appending(UUID().uuidString),
+            RequestService().uploadImage(name: username.appending(UUID().uuidString).appending(".png"),
                                          content: imageBase64,
                                          userId: userId) { uploadImageResponse in
                                             print("uploaded")
