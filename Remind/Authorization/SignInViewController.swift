@@ -102,9 +102,10 @@ class SignInViewController: UIViewController, AnimationTextViewDelegate {
             case let .success(response):
                 UserManager.shared.save(user: response.user)
                 UserManager.shared.set(token: response.token)
-                if let imageId = response.user.images?.first?.id {
-                    UserManager.shared.set(imageId: imageId)
-                }
+                //TODO: FIX
+                //if let imageId = response.user.images?.first?.id {
+                  //  UserManager.shared.set(imageId: imageId)
+                //}
                 MainRoutingService.openApplication(from: self)
             case let .failure(error):
                 self.errorLabel.text = error.localizedDescription

@@ -37,7 +37,7 @@ struct RequestService {
         api.request(ClassroomsResource(id: id), completion: completion)
     }
     
-    func joinClassroom(id: Int, _ completion: @escaping (Result<JoinClassroomResponse>) -> Void) {
+    func joinClassroom(id: Int, _ completion: @escaping (Result<Classroom>) -> Void) {
         api.request(JoinClassroomResource(id: id), completion: completion)
     }
     

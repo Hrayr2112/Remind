@@ -48,13 +48,18 @@ class UserManager {
         UserDefaults.standard.setValue(user.username, forKey: "username")
         UserDefaults.standard.setValue(user.email, forKey: "email")
         UserDefaults.standard.setValue(user.id, forKey: "id")
-        UserDefaults.standard.setValue(user.images, forKey: "images")
+        //TODO: FIX
+//        UserDefaults.standard.setValue(user.images, forKey: "images")
         UserDefaults.standard.setValue(user.classromId, forKey: "classromId")
         UserDefaults.standard.setValue(user.password, forKey: "password")
     }
     
     func set(username: String) {
         UserDefaults.standard.setValue(username, forKey: "username")
+    }
+    
+    func set(classroomId: Int) {
+        UserDefaults.standard.setValue(classroomId, forKey: "classromId")
     }
     
     func set(email: String) {

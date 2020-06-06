@@ -52,8 +52,6 @@ class ClassroomViewController: UIViewController {
         title = "Classroom"
         configureTableView()
         configureCollectionView()
-        
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -98,8 +96,17 @@ class ClassroomViewController: UIViewController {
     
     private func loadData() {
         if let classroomId = UserManager.shared.classroomId {
-            // HRO do request here
-            noClassroomView.isHidden = true
+            RequestService().obtainClassroom(id: classroomId) { result in
+                switch result {
+                case let .success(response):
+                    self.handleClassromInfo(participants: response.participants,
+                                            images: response.images,
+                                            classroomId: response.id)
+                case let .failure(error):
+                    self.noClassroomView.isHidden = false
+                    self.presentErrorAlert()
+                }
+            }
         } else {
             noClassroomView.isHidden = false
         }
@@ -113,34 +120,6 @@ class ClassroomViewController: UIViewController {
         peopleTableView.dataSource = self
         
         peopleTableView.register(cellType: PeopleTableViewCell.self)
-        
-        // TODO: This info should be loaded from Backend
-        peopleViewModels = [
-            PeopleTableViewCellModel(data: User(id: 1,
-                                                username: "Александр Петров",
-                                                email: "alex.petrov@mail.ru",
-                                                classromId: nil,
-                                                images: nil)),
-            PeopleTableViewCellModel(data: User(id: 0,
-                                                username: "Ишхан Асланян",
-                                                email: "ishxan.aslanyan@mail.ru",
-                                                classromId: nil,
-                                                images: nil)),
-            PeopleTableViewCellModel(data: User(id: 2,
-                                                username: "Дарья Дацалова",
-                                                email: "dasha.1987.dac@mail.ru",
-                                                classromId: nil,
-                                                images: nil)),
-            PeopleTableViewCellModel(data: User(id: 3,
-                                                username: "Артемий Кузнецов",
-                                                email: "art.kuz@mail.ru",
-                                                classromId: nil,
-                                                images: nil)),
-            PeopleTableViewCellModel(data: User(id: 4,
-                                                username: "Антон Логвинов",
-                                                email: "logvinov.anton.1992@mail.ru",
-                                                classromId: nil,
-                                                images: nil))]
     }
     
     private func configureCollectionView() {
@@ -152,13 +131,6 @@ class ClassroomViewController: UIViewController {
                 
         photosCollectionView.register(cellType: PhotoCollectionViewCell.self)
         photosCollectionView.register(cellType: AddPhotoCollectionViewCell.self)
-        
-        // TODO: This info should be loaded from Backend
-        photosViewModels = [PhotoCollectionViewCellModel(data: Image(id: 0, name: "10 класс")),
-                            PhotoCollectionViewCellModel(data: Image(id: 1, name: "11 класс")),
-                            PhotoCollectionViewCellModel(data: Image(id: 2, name: "10 класс")),
-                            PhotoCollectionViewCellModel(data: Image(id: 3, name: "11 класс")),
-                            PhotoCollectionViewCellModel(data: Image(id: 4, name: "10 класс")),]
     }
     
     // MARK: - Actions
@@ -182,7 +154,17 @@ class ClassroomViewController: UIViewController {
         ac.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
             let answer = ac.textFields![0].text
             if let answer = answer, !answer.isEmpty {
-                // HRO do request here
+                RequestService().createClassroom(name: answer) { result in
+                    switch result {
+                    case let .success(response):
+                        self.handleClassromInfo(participants: response.participants,
+                                                images: response.images,
+                                                classroomId: response.id)
+                    case let .failure(error):
+                        self.noClassroomView.isHidden = false
+                        self.presentErrorAlert()
+                    }
+                }
             } else {
                 let errorAc = UIAlertController(title: "Please enter a classroom name", message: nil, preferredStyle: .alert)
                 errorAc.addAction(UIAlertAction(title: "OK", style: .default, handler: { _ in
@@ -203,7 +185,19 @@ class ClassroomViewController: UIViewController {
         ac.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
             let answer = ac.textFields![0].text
             if let answer = answer, !answer.isEmpty {
-                // HRO do request here
+                guard let classroomId = Int(answer) else {
+                    return
+                }
+                RequestService().joinClassroom(id: classroomId) { result in
+                    switch result {
+                    case let .success(response):
+                        self.handleClassromInfo(participants: response.participants,
+                                                images: response.images,
+                                                classroomId: response.id)
+                    case let .failure(error):
+                        self.presentErrorAlert()
+                    }
+                }
             } else {
                 let errorAc = UIAlertController(title: "Please enter a classroom id", message: nil, preferredStyle: .alert)
                 errorAc.addAction(UIAlertAction(title: "OK", style: .default, handler: { _ in
@@ -213,6 +207,21 @@ class ClassroomViewController: UIViewController {
             }
         }))
         present(ac, animated: true, completion: nil)
+    }
+    
+    private func presentErrorAlert() {
+        let errorAc = UIAlertController(title: "Network connection error", message: nil, preferredStyle: .alert)
+        errorAc.addAction(UIAlertAction(title: "OK", style: .default, handler: { _ in
+            self.createClassroomButtonTap()
+        }))
+        self.present(errorAc, animated: true, completion: nil)
+    }
+    
+    private func handleClassromInfo(participants: [User], images: [Image], classroomId: Int) {
+        peopleViewModels = participants.map({ PeopleTableViewCellModel(data: $0) })
+        photosViewModels = images.map({ PhotoCollectionViewCellModel(data: $0) })
+        UserManager().set(classroomId: classroomId)
+        noClassroomView.isHidden = true
     }
 }
 
