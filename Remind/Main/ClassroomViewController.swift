@@ -258,7 +258,12 @@ extension ClassroomViewController: UICollectionViewDelegate & UICollectionViewDa
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if indexPath.row == photosViewModels.count - 1 {
-            // Open Camera
+            let vc = UIImagePickerController()
+            vc.sourceType = UIImagePickerController.SourceType.photoLibrary
+            vc.allowsEditing = true
+            vc.mediaTypes = ["public.image"]
+            vc.delegate = self
+            present(vc, animated: true)
         } else {
             let previewer = PhotoPreviewer(images: photosViewModels.map { $0.data }, preselectedIndex: indexPath.row )
             previewer.open(from: self)
@@ -300,4 +305,18 @@ extension ClassroomViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return 4
     }
+    
+}
+
+extension ClassroomViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        picker.dismiss(animated: true, completion: nil)
+        guard let image = info[UIImagePickerController.InfoKey.editedImage] as? UIImage,
+            let base64 = image.pngData()?.base64EncodedString() else { return }
+        
+        
+        // HRO DO generate REQUEST WITH base64 and classroomID
+    }
+    
 }
