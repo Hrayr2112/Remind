@@ -42,13 +42,18 @@ class ExploreViewController: UIViewController {
         mainCollectionView.delegate = self
         mainCollectionView.dataSource = self
         if let layout = mainCollectionView.collectionViewLayout as? UICollectionViewFlowLayout {
-            layout.scrollDirection = .horizontal
+            layout.scrollDirection = .vertical
         }
                 
         mainCollectionView.register(cellType: PhotoCollectionViewCell.self)
         
         // TODO: This info should be loaded from Backend
         photosViewModels = [PhotoCollectionViewCellModel(data: Image(id: 0, name: "10 класс")),
+                            PhotoCollectionViewCellModel(data: Image(id: 1, name: "11 класс")),
+                            PhotoCollectionViewCellModel(data: Image(id: 2, name: "10 класс")),
+                            PhotoCollectionViewCellModel(data: Image(id: 3, name: "11 класс")),
+                            PhotoCollectionViewCellModel(data: Image(id: 4, name: "10 класс")),
+                            PhotoCollectionViewCellModel(data: Image(id: 0, name: "10 класс")),
                             PhotoCollectionViewCellModel(data: Image(id: 1, name: "11 класс")),
                             PhotoCollectionViewCellModel(data: Image(id: 2, name: "10 класс")),
                             PhotoCollectionViewCellModel(data: Image(id: 3, name: "11 класс")),
@@ -66,7 +71,7 @@ extension ExploreViewController: UICollectionViewDelegate & UICollectionViewData
     }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 2
+        return 1
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -88,10 +93,10 @@ extension ExploreViewController: UICollectionViewDelegateFlowLayout {
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 2
+        return 6
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return 1
+        return 4
     }
 }

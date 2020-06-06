@@ -121,7 +121,7 @@ class ClassroomViewController: UIViewController {
         photosCollectionView.delegate = self
         photosCollectionView.dataSource = self
         if let layout = photosCollectionView.collectionViewLayout as? UICollectionViewFlowLayout {
-            layout.scrollDirection = .horizontal
+            layout.scrollDirection = .vertical
         }
                 
         photosCollectionView.register(cellType: PhotoCollectionViewCell.self)
@@ -132,7 +132,7 @@ class ClassroomViewController: UIViewController {
                             PhotoCollectionViewCellModel(data: Image(id: 1, name: "11 класс")),
                             PhotoCollectionViewCellModel(data: Image(id: 2, name: "10 класс")),
                             PhotoCollectionViewCellModel(data: Image(id: 3, name: "11 класс")),
-                            PhotoCollectionViewCellModel(data: Image(id: 4, name: "10 класс"))]
+                            PhotoCollectionViewCellModel(data: Image(id: 4, name: "10 класс")),]
     }
     
     // MARK: - Actions
@@ -198,7 +198,7 @@ extension ClassroomViewController: UICollectionViewDelegate & UICollectionViewDa
     }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 2
+        return 1
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -207,7 +207,7 @@ extension ClassroomViewController: UICollectionViewDelegate & UICollectionViewDa
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        if indexPath.row == photosViewModels.count - 1, indexPath.section == 1 {
+        if indexPath.row == photosViewModels.count - 1 {
             let cell = collectionView.dequeueReusableCell(for: indexPath) as AddPhotoCollectionViewCell
             return cell
         }
@@ -226,10 +226,10 @@ extension ClassroomViewController: UICollectionViewDelegateFlowLayout {
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return .zero
+        return 6
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return 1
+        return 4
     }
 }
