@@ -96,7 +96,7 @@ class ClassroomViewController: UIViewController {
     
     // MARK: - Private
     
-    private func handleEmptyState() {
+    private func loadData() {
         if let classroomId = UserManager.shared.classroomId {
             // HRO do request here
             noClassroomView.isHidden = true
@@ -178,6 +178,7 @@ class ClassroomViewController: UIViewController {
         ac.addTextField { textField in
             textField.placeholder = "Enter the classroom name"
         }
+        ac.addAction(UIAlertAction(title: "Cancel", style: .default, handler: nil))
         ac.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
             let answer = ac.textFields![0].text
             if let answer = answer, !answer.isEmpty {
@@ -198,6 +199,7 @@ class ClassroomViewController: UIViewController {
         ac.addTextField { textField in
             textField.placeholder = "Enter the classroom id"
         }
+        ac.addAction(UIAlertAction(title: "Cancel", style: .default, handler: nil))
         ac.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
             let answer = ac.textFields![0].text
             if let answer = answer, !answer.isEmpty {
