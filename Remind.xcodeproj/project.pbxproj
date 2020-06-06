@@ -49,6 +49,9 @@
 		3821E056248B16EC0029BB1F /* ExploreResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3821E055248B16EC0029BB1F /* ExploreResponse.swift */; };
 		3821E058248B19930029BB1F /* ConvertedImageResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3821E057248B19930029BB1F /* ConvertedImageResponse.swift */; };
 		3821E062248B66020029BB1F /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3821E064248B66020029BB1F /* Localizable.strings */; };
+		3821E06C248B791A0029BB1F /* PeopleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3821E06A248B791A0029BB1F /* PeopleTableViewCell.swift */; };
+		3821E06D248B791A0029BB1F /* PeopleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3821E06B248B791A0029BB1F /* PeopleTableViewCell.xib */; };
+		3821E071248B7A7D0029BB1F /* PeopleTableViewCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3821E070248B7A7D0029BB1F /* PeopleTableViewCellModel.swift */; };
 		DF89518E80A90E876DC8E40E /* Pods_Remind.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9707412B62D5C03DC0219DC0 /* Pods_Remind.framework */; };
 /* End PBXBuildFile section */
 
@@ -101,6 +104,9 @@
 		3821E063248B66020029BB1F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		3821E066248B662F0029BB1F /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		3821E067248B662F0029BB1F /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
+		3821E06A248B791A0029BB1F /* PeopleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleTableViewCell.swift; sourceTree = "<group>"; };
+		3821E06B248B791A0029BB1F /* PeopleTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PeopleTableViewCell.xib; sourceTree = "<group>"; };
+		3821E070248B7A7D0029BB1F /* PeopleTableViewCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleTableViewCellModel.swift; sourceTree = "<group>"; };
 		9707412B62D5C03DC0219DC0 /* Pods_Remind.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Remind.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -168,6 +174,7 @@
 		3821DFF9248B03380029BB1F /* Remind */ = {
 			isa = PBXGroup;
 			children = (
+				3821E068248B78EC0029BB1F /* Cells */,
 				3821E048248B0D9A0029BB1F /* Response */,
 				3821E025248B04460029BB1F /* Models */,
 				3821E013248B03DC0029BB1F /* Networking */,
@@ -246,6 +253,24 @@
 				3821E057248B19930029BB1F /* ConvertedImageResponse.swift */,
 			);
 			path = Response;
+			sourceTree = "<group>";
+		};
+		3821E068248B78EC0029BB1F /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				3821E069248B78F30029BB1F /* PeopleTableViewCell */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		3821E069248B78F30029BB1F /* PeopleTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				3821E06A248B791A0029BB1F /* PeopleTableViewCell.swift */,
+				3821E06B248B791A0029BB1F /* PeopleTableViewCell.xib */,
+				3821E070248B7A7D0029BB1F /* PeopleTableViewCellModel.swift */,
+			);
+			path = PeopleTableViewCell;
 			sourceTree = "<group>";
 		};
 		7A50D83306194A425F9DE05D /* Frameworks */ = {
@@ -332,6 +357,7 @@
 				24FB6878248B6BD700F56972 /* Main.storyboard in Resources */,
 				3821E00A248B03390029BB1F /* LaunchScreen.storyboard in Resources */,
 				3821E007248B03390029BB1F /* Assets.xcassets in Resources */,
+				3821E06D248B791A0029BB1F /* PeopleTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -392,8 +418,10 @@
 				3821E019248B040A0029BB1F /* UIImageView+.swift in Sources */,
 				3821E018248B040A0029BB1F /* Alamofire+.swift in Sources */,
 				3821E04A248B0DA40029BB1F /* LoginResponse.swift in Sources */,
+				3821E06C248B791A0029BB1F /* PeopleTableViewCell.swift in Sources */,
 				3821E02C248B04610029BB1F /* CustomError.swift in Sources */,
 				3821DFFF248B03380029BB1F /* ViewController.swift in Sources */,
+				3821E071248B7A7D0029BB1F /* PeopleTableViewCellModel.swift in Sources */,
 				246AAE7B248B0AD1002F987A /* SignInViewController.swift in Sources */,
 				24FB687D248B6D4600F56972 /* ClassroomViewController.swift in Sources */,
 				246AAE7D248B0B31002F987A /* AnimationTextView.swift in Sources */,
