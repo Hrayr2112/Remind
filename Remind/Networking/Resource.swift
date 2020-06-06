@@ -54,7 +54,7 @@ class LoginResource: Resource<LoginResponse> {
 
 
 class ClassroomsResource: Resource<ClassroomsResponse> {
-
+    
     init(name: String) {
         super.init(request: UserAction.classrooms(name: name)) { response -> Result<ClassroomsResponse> in
             if let data = response as? Data {
