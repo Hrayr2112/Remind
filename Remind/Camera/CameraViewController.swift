@@ -17,7 +17,7 @@ class CameraViewController: UIViewController {
     @IBOutlet weak var captureButtonContainerView: UIView!
     @IBOutlet weak var captureButton: UIButton!
     
-    var captureBlock: ((UIImage?) -> Void)?
+    var captureBlock: ((UIImage) -> Void)?
     
     // MARK: - Lifecycle
 
@@ -55,6 +55,7 @@ class CameraViewController: UIViewController {
     @IBAction private func captureButtonPressed() {
         session.capture({ image, settings in
             self.captureBlock?(image)
+            self.dismiss(animated: true, completion: nil)
         }, { error in
             
         })
