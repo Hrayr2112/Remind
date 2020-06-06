@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="rx3-C4-LYJ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="rx3-C4-LYJ">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -251,15 +251,71 @@
                                     <outlet property="delegate" destination="lgT-Mb-0mX" id="5w9-qx-Smu"/>
                                 </connections>
                             </scrollView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1yd-95-DG8">
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rD7-mF-Jx0">
+                                        <rect key="frame" x="77" y="282.5" width="260" height="60"/>
+                                        <color key="backgroundColor" name="main"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="GYE-3h-sC2"/>
+                                            <constraint firstAttribute="width" constant="260" id="KL2-CJ-16j"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                        <state key="normal" title="Create Classroom">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="20"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="createClassroomButtonTap" destination="lgT-Mb-0mX" eventType="touchUpInside" id="uw3-6B-GKW"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dnE-XN-mLR">
+                                        <rect key="frame" x="77" y="372.5" width="260" height="60"/>
+                                        <color key="backgroundColor" name="main"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="260" id="UTA-Er-p1W"/>
+                                            <constraint firstAttribute="height" constant="60" id="bDu-11-bp2"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                        <state key="normal" title="Join Classroom">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="20"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="joinClassroomButtonTap" destination="lgT-Mb-0mX" eventType="touchUpInside" id="4cq-Wb-VzQ"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstItem="dnE-XN-mLR" firstAttribute="top" secondItem="1yd-95-DG8" secondAttribute="centerY" constant="10" id="3Kk-uA-Hby"/>
+                                    <constraint firstItem="rD7-mF-Jx0" firstAttribute="centerX" secondItem="1yd-95-DG8" secondAttribute="centerX" id="aHw-Ix-Iah"/>
+                                    <constraint firstItem="dnE-XN-mLR" firstAttribute="centerX" secondItem="1yd-95-DG8" secondAttribute="centerX" id="chs-8N-mLV"/>
+                                    <constraint firstAttribute="centerY" secondItem="rD7-mF-Jx0" secondAttribute="bottom" constant="20" id="tCr-pd-ZJX"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="0b2-Dc-y0A" secondAttribute="bottom" id="6A6-lJ-DgZ"/>
                             <constraint firstItem="G7t-KZ-0Il" firstAttribute="leading" secondItem="f7X-ok-F3y" secondAttribute="leading" id="EdB-S4-Ihn"/>
+                            <constraint firstItem="f7X-ok-F3y" firstAttribute="trailing" secondItem="1yd-95-DG8" secondAttribute="trailing" id="RIl-6d-JOa"/>
+                            <constraint firstItem="1yd-95-DG8" firstAttribute="top" secondItem="f7X-ok-F3y" secondAttribute="top" id="TUG-Tr-iqZ"/>
                             <constraint firstItem="0b2-Dc-y0A" firstAttribute="leading" secondItem="f7X-ok-F3y" secondAttribute="leading" id="UaO-cf-ZS3"/>
                             <constraint firstItem="G7t-KZ-0Il" firstAttribute="top" secondItem="f7X-ok-F3y" secondAttribute="top" id="V2p-iL-JUA"/>
+                            <constraint firstItem="1yd-95-DG8" firstAttribute="leading" secondItem="f7X-ok-F3y" secondAttribute="leading" id="VNP-QF-nAK"/>
                             <constraint firstItem="0b2-Dc-y0A" firstAttribute="top" secondItem="G7t-KZ-0Il" secondAttribute="bottom" id="WDB-Da-cYk"/>
                             <constraint firstItem="f7X-ok-F3y" firstAttribute="trailing" secondItem="G7t-KZ-0Il" secondAttribute="trailing" id="a7o-Mj-no3"/>
+                            <constraint firstItem="f7X-ok-F3y" firstAttribute="bottom" secondItem="1yd-95-DG8" secondAttribute="bottom" id="nfx-HN-jpX"/>
                             <constraint firstItem="f7X-ok-F3y" firstAttribute="trailing" secondItem="0b2-Dc-y0A" secondAttribute="trailing" id="syo-qW-fwY"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="f7X-ok-F3y"/>
@@ -267,6 +323,7 @@
                     <navigationItem key="navigationItem" id="W6m-bw-4c5"/>
                     <connections>
                         <outlet property="mainScrollView" destination="0b2-Dc-y0A" id="JQJ-Gd-RGS"/>
+                        <outlet property="noClassroomView" destination="1yd-95-DG8" id="F4l-85-kwN"/>
                         <outlet property="peopleButton" destination="Ece-UI-7wQ" id="YoL-VG-PbX"/>
                         <outlet property="peopleTableView" destination="fMJ-qi-Udg" id="QHW-ql-cOO"/>
                         <outlet property="photosButton" destination="uMJ-sU-WD2" id="6WC-a7-0A8"/>

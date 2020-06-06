@@ -28,6 +28,7 @@ class ClassroomViewController: UIViewController {
     @IBOutlet weak private var peopleButton: UIButton!
     @IBOutlet weak private var photosButton: UIButton!
     @IBOutlet weak private var tabLineLeadingConstraint: NSLayoutConstraint!
+    @IBOutlet weak private var noClassroomView: UIView!
     
     // MARK: - Variables
     
@@ -51,6 +52,8 @@ class ClassroomViewController: UIViewController {
         title = "Classroom"
         configureTableView()
         configureCollectionView()
+        
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -88,6 +91,17 @@ class ClassroomViewController: UIViewController {
             self.view.layoutIfNeeded()
         }) { (success) in
             self.isAnimating = false
+        }
+    }
+    
+    // MARK: - Private
+    
+    private func handleEmptyState() {
+        if let classroomId = UserManager.shared.classroomId {
+            // HRO do request here
+            noClassroomView.isHidden = true
+        } else {
+            noClassroomView.isHidden = false
         }
     }
     
@@ -159,6 +173,45 @@ class ClassroomViewController: UIViewController {
         scrollToSelectedTab(animated: true)
     }
     
+    @IBAction func createClassroomButtonTap() {
+        let ac = UIAlertController(title: "Create a classroom", message: nil, preferredStyle: .alert)
+        ac.addTextField { textField in
+            textField.placeholder = "Enter the classroom name"
+        }
+        ac.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
+            let answer = ac.textFields![0].text
+            if let answer = answer, !answer.isEmpty {
+                // HRO do request here
+            } else {
+                let errorAc = UIAlertController(title: "Please enter a classroom name", message: nil, preferredStyle: .alert)
+                errorAc.addAction(UIAlertAction(title: "OK", style: .default, handler: { _ in
+                    self.createClassroomButtonTap()
+                }))
+                self.present(errorAc, animated: true, completion: nil)
+            }
+        }))
+        present(ac, animated: true, completion: nil)
+    }
+    
+    @IBAction func joinClassroomButtonTap() {
+        let ac = UIAlertController(title: "Join a classroom", message: nil, preferredStyle: .alert)
+        ac.addTextField { textField in
+            textField.placeholder = "Enter the classroom id"
+        }
+        ac.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
+            let answer = ac.textFields![0].text
+            if let answer = answer, !answer.isEmpty {
+                // HRO do request here
+            } else {
+                let errorAc = UIAlertController(title: "Please enter a classroom id", message: nil, preferredStyle: .alert)
+                errorAc.addAction(UIAlertAction(title: "OK", style: .default, handler: { _ in
+                    self.createClassroomButtonTap()
+                }))
+                self.present(errorAc, animated: true, completion: nil)
+            }
+        }))
+        present(ac, animated: true, completion: nil)
+    }
 }
 
 extension ClassroomViewController: UIScrollViewDelegate {
@@ -171,6 +224,7 @@ extension ClassroomViewController: UIScrollViewDelegate {
             configureTopBarForSelectedTab(animated: true)
         }
     }
+    
 }
 
 // MARK: - UITableViewDelegate & UITableViewDataSource
@@ -181,7 +235,6 @@ extension ClassroomViewController: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(for: indexPath) as PeopleTableViewCell
         cell.viewModel = peopleViewModels[safe: indexPath.row]
         return cell
-        
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
