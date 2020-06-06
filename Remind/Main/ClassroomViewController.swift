@@ -12,6 +12,7 @@ class ClassroomViewController: UIViewController {
     
     private enum Locals {
         static let cellHeight: CGFloat = 57
+        static let photoCellHeight: CGFloat = 135
     }
     
     private enum ClassroomTab: Int {
@@ -37,12 +38,18 @@ class ClassroomViewController: UIViewController {
             peopleTableView.reloadData()
         }
     }
+    private var photosViewModels: [PhotoCollectionViewCellModel] = [] {
+        didSet {
+            peopleTableView.reloadData()
+        }
+    }
     
     // MARK: - Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         configureTableView()
+        configureCollectionView()
     }
     
     override func viewWillLayoutSubviews() {
@@ -110,6 +117,24 @@ class ClassroomViewController: UIViewController {
                                                 images: nil))]
     }
     
+    private func configureCollectionView() {
+        photosCollectionView.delegate = self
+        photosCollectionView.dataSource = self
+        if let layout = photosCollectionView.collectionViewLayout as? UICollectionViewFlowLayout {
+            layout.scrollDirection = .horizontal
+        }
+                
+        photosCollectionView.register(cellType: PhotoCollectionViewCell.self)
+        photosCollectionView.register(cellType: AddPhotoCollectionViewCell.self)
+        
+        // TODO: This info should be loaded from Backend
+        photosViewModels = [PhotoCollectionViewCellModel(data: Image(id: 0, name: "10 класс")),
+                            PhotoCollectionViewCellModel(data: Image(id: 1, name: "11 класс")),
+                            PhotoCollectionViewCellModel(data: Image(id: 2, name: "10 класс")),
+                            PhotoCollectionViewCellModel(data: Image(id: 3, name: "11 класс")),
+                            PhotoCollectionViewCellModel(data: Image(id: 4, name: "10 класс")),]
+    }
+    
     // MARK: - Actions
     
     @IBAction func peopleButtonTap() {
@@ -136,8 +161,8 @@ extension ClassroomViewController: UIScrollViewDelegate {
     }
 }
 
-
 // MARK: - UITableViewDelegate & UITableViewDataSource
+
 extension ClassroomViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -157,5 +182,54 @@ extension ClassroomViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
         return UIView()
+    }
+}
+
+// MARK: - UICollectionViewDelegate & UICollectionViewDataSource
+
+extension ClassroomViewController: UICollectionViewDelegate & UICollectionViewDataSource {
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if indexPath.row == photosViewModels.count - 1, indexPath.section == 1 {
+            // Open Camera
+        } else {
+            // Show Image
+        }
+    }
+    
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 2
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return photosViewModels.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        if indexPath.row == photosViewModels.count - 1, indexPath.section == 1 {
+            let cell = collectionView.dequeueReusableCell(for: indexPath) as AddPhotoCollectionViewCell
+            return cell
+        }
+        
+        let cell = collectionView.dequeueReusableCell(for: indexPath) as PhotoCollectionViewCell
+        cell.viewModel = photosViewModels[safe: indexPath.row]
+        return cell
+    }
+}
+
+// MARK: - UICollectionViewDelegateFlowLayout
+
+extension ClassroomViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: collectionView.bounds.width / 2 - 2, height: Locals.photoCellHeight)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return .zero
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 1
     }
 }

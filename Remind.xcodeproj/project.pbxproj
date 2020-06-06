@@ -52,6 +52,11 @@
 		3821E06C248B791A0029BB1F /* PeopleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3821E06A248B791A0029BB1F /* PeopleTableViewCell.swift */; };
 		3821E06D248B791A0029BB1F /* PeopleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3821E06B248B791A0029BB1F /* PeopleTableViewCell.xib */; };
 		3821E071248B7A7D0029BB1F /* PeopleTableViewCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3821E070248B7A7D0029BB1F /* PeopleTableViewCellModel.swift */; };
+		3821E075248BC5B00029BB1F /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3821E073248BC5B00029BB1F /* PhotoCollectionViewCell.swift */; };
+		3821E076248BC5B00029BB1F /* PhotoCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3821E074248BC5B00029BB1F /* PhotoCollectionViewCell.xib */; };
+		3821E078248BC5CE0029BB1F /* PhotoCollectionViewCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3821E077248BC5CE0029BB1F /* PhotoCollectionViewCellModel.swift */; };
+		3821E07C248BC8280029BB1F /* AddPhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3821E07A248BC8280029BB1F /* AddPhotoCollectionViewCell.swift */; };
+		3821E07D248BC8280029BB1F /* AddPhotoCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3821E07B248BC8280029BB1F /* AddPhotoCollectionViewCell.xib */; };
 		DF89518E80A90E876DC8E40E /* Pods_Remind.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9707412B62D5C03DC0219DC0 /* Pods_Remind.framework */; };
 /* End PBXBuildFile section */
 
@@ -107,6 +112,11 @@
 		3821E06A248B791A0029BB1F /* PeopleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleTableViewCell.swift; sourceTree = "<group>"; };
 		3821E06B248B791A0029BB1F /* PeopleTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PeopleTableViewCell.xib; sourceTree = "<group>"; };
 		3821E070248B7A7D0029BB1F /* PeopleTableViewCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleTableViewCellModel.swift; sourceTree = "<group>"; };
+		3821E073248BC5B00029BB1F /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewCell.swift; sourceTree = "<group>"; };
+		3821E074248BC5B00029BB1F /* PhotoCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhotoCollectionViewCell.xib; sourceTree = "<group>"; };
+		3821E077248BC5CE0029BB1F /* PhotoCollectionViewCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewCellModel.swift; sourceTree = "<group>"; };
+		3821E07A248BC8280029BB1F /* AddPhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPhotoCollectionViewCell.swift; sourceTree = "<group>"; };
+		3821E07B248BC8280029BB1F /* AddPhotoCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddPhotoCollectionViewCell.xib; sourceTree = "<group>"; };
 		9707412B62D5C03DC0219DC0 /* Pods_Remind.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Remind.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -258,6 +268,8 @@
 		3821E068248B78EC0029BB1F /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				3821E079248BC8090029BB1F /* AddPhotoCollectionViewCell */,
+				3821E072248BC5930029BB1F /* PhotoCollectionViewCell */,
 				3821E069248B78F30029BB1F /* PeopleTableViewCell */,
 			);
 			path = Cells;
@@ -271,6 +283,25 @@
 				3821E070248B7A7D0029BB1F /* PeopleTableViewCellModel.swift */,
 			);
 			path = PeopleTableViewCell;
+			sourceTree = "<group>";
+		};
+		3821E072248BC5930029BB1F /* PhotoCollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				3821E073248BC5B00029BB1F /* PhotoCollectionViewCell.swift */,
+				3821E074248BC5B00029BB1F /* PhotoCollectionViewCell.xib */,
+				3821E077248BC5CE0029BB1F /* PhotoCollectionViewCellModel.swift */,
+			);
+			path = PhotoCollectionViewCell;
+			sourceTree = "<group>";
+		};
+		3821E079248BC8090029BB1F /* AddPhotoCollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				3821E07A248BC8280029BB1F /* AddPhotoCollectionViewCell.swift */,
+				3821E07B248BC8280029BB1F /* AddPhotoCollectionViewCell.xib */,
+			);
+			path = AddPhotoCollectionViewCell;
 			sourceTree = "<group>";
 		};
 		7A50D83306194A425F9DE05D /* Frameworks */ = {
@@ -354,8 +385,10 @@
 				246AAE76248B0949002F987A /* Colors.xcassets in Resources */,
 				3821E062248B66020029BB1F /* Localizable.strings in Resources */,
 				246AAE74248B08EC002F987A /* Authorization.storyboard in Resources */,
+				3821E07D248BC8280029BB1F /* AddPhotoCollectionViewCell.xib in Resources */,
 				24FB6878248B6BD700F56972 /* Main.storyboard in Resources */,
 				3821E00A248B03390029BB1F /* LaunchScreen.storyboard in Resources */,
+				3821E076248BC5B00029BB1F /* PhotoCollectionViewCell.xib in Resources */,
 				3821E007248B03390029BB1F /* Assets.xcassets in Resources */,
 				3821E06D248B791A0029BB1F /* PeopleTableViewCell.xib in Resources */,
 			);
@@ -429,10 +462,12 @@
 				3821E022248B04340029BB1F /* RequestService.swift in Sources */,
 				3821E045248B0D970029BB1F /* Classroom.swift in Sources */,
 				3821E054248B164A0029BB1F /* GenerateResponse.swift in Sources */,
+				3821E07C248BC8280029BB1F /* AddPhotoCollectionViewCell.swift in Sources */,
 				3821E023248B04340029BB1F /* APIAction.swift in Sources */,
 				3821E044248B0D970029BB1F /* User.swift in Sources */,
 				3821E020248B04340029BB1F /* APIClient.swift in Sources */,
 				246AAE88248B1269002F987A /* ReachabilityManager.swift in Sources */,
+				3821E078248BC5CE0029BB1F /* PhotoCollectionViewCellModel.swift in Sources */,
 				3821DFFB248B03380029BB1F /* AppDelegate.swift in Sources */,
 				246AAE83248B0BFA002F987A /* String+Validation.swift in Sources */,
 				3821E005248B03380029BB1F /* Remind.xcdatamodeld in Sources */,
@@ -445,6 +480,7 @@
 				3821E005248B03380029BB1F /* Remind.xcdatamodeld in Sources */,
 				3821E024248B04340029BB1F /* Resource.swift in Sources */,
 				3821E04C248B0E530029BB1F /* ClassroomsResponse.swift in Sources */,
+				3821E075248BC5B00029BB1F /* PhotoCollectionViewCell.swift in Sources */,
 				3821E021248B04340029BB1F /* UserAction.swift in Sources */,
 				24FB687B248B6D3700F56972 /* ExploreViewController.swift in Sources */,
 				24FB6874248B136600F56972 /* SignUpViewController.swift in Sources */,
