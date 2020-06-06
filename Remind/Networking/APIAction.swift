@@ -13,14 +13,14 @@ protocol APIAction: URLRequestConvertible {
     var method: HTTPMethod { get }
     var path: String { get }
     var bodyParameters: [String: Any] { get }
-    var baseURL: String { get }
+    static var baseURL: String { get }
     var authHeader: [String: String] { get }
     var encoding: ParameterEncoding { get }
 }
 
 extension APIAction {
     func asURLRequest() throws -> URLRequest {
-        var originalRequest = try URLRequest(url: baseURL.appending(path),
+        var originalRequest = try URLRequest(url: Self.baseURL.appending(path),
                                              method: method,
                                              headers: authHeader)
         var params: [String: Any]?

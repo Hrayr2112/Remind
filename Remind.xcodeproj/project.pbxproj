@@ -26,6 +26,7 @@
 		24FB6883248BC42000F56972 /* CameraViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 24FB6881248BC42000F56972 /* CameraViewController.xib */; };
 		24FB6885248BCCE900F56972 /* UIView+Autolayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24FB6884248BCCE900F56972 /* UIView+Autolayout.swift */; };
 		24FB6887248BDB8A00F56972 /* CaptureButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24FB6886248BDB8A00F56972 /* CaptureButton.swift */; };
+		24FB688A248C054E00F56972 /* PhotoPreviewer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24FB6889248C054E00F56972 /* PhotoPreviewer.swift */; };
 		3821DFFB248B03380029BB1F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3821DFFA248B03380029BB1F /* AppDelegate.swift */; };
 		3821DFFF248B03380029BB1F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3821DFFE248B03380029BB1F /* ViewController.swift */; };
 		3821E005248B03380029BB1F /* Remind.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3821E003248B03380029BB1F /* Remind.xcdatamodeld */; };
@@ -86,6 +87,7 @@
 		24FB6881248BC42000F56972 /* CameraViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CameraViewController.xib; sourceTree = "<group>"; };
 		24FB6884248BCCE900F56972 /* UIView+Autolayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Autolayout.swift"; sourceTree = "<group>"; };
 		24FB6886248BDB8A00F56972 /* CaptureButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptureButton.swift; sourceTree = "<group>"; };
+		24FB6889248C054E00F56972 /* PhotoPreviewer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPreviewer.swift; sourceTree = "<group>"; };
 		3821DFF7248B03380029BB1F /* reMind.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = reMind.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3821DFFA248B03380029BB1F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3821DFFE248B03380029BB1F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -181,6 +183,14 @@
 			path = Camera;
 			sourceTree = "<group>";
 		};
+		24FB688B248C0AD500F56972 /* PhotoPreviewer */ = {
+			isa = PBXGroup;
+			children = (
+				24FB6889248C054E00F56972 /* PhotoPreviewer.swift */,
+			);
+			path = PhotoPreviewer;
+			sourceTree = "<group>";
+		};
 		3821DFEE248B03380029BB1F = {
 			isa = PBXGroup;
 			children = (
@@ -213,6 +223,7 @@
 				246AAE79248B0A84002F987A /* Authorization */,
 				24FB6879248B6D2400F56972 /* Main */,
 				24FB6888248BDC7400F56972 /* Camera */,
+				24FB688B248C0AD500F56972 /* PhotoPreviewer */,
 				3821DFFA248B03380029BB1F /* AppDelegate.swift */,
 				246AAE7C248B0B31002F987A /* AnimationTextView.swift */,
 				3821DFFE248B03380029BB1F /* ViewController.swift */,
@@ -493,6 +504,7 @@
 				3821E045248B0D970029BB1F /* Classroom.swift in Sources */,
 				3821E054248B164A0029BB1F /* GenerateResponse.swift in Sources */,
 				3821E07C248BC8280029BB1F /* AddPhotoCollectionViewCell.swift in Sources */,
+				24FB688A248C054E00F56972 /* PhotoPreviewer.swift in Sources */,
 				3821E023248B04340029BB1F /* APIAction.swift in Sources */,
 				3821E044248B0D970029BB1F /* User.swift in Sources */,
 				3821E020248B04340029BB1F /* APIClient.swift in Sources */,

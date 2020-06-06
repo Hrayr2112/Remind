@@ -74,7 +74,7 @@ extension UserAction: APIAction {
         }
     }
     
-    var baseURL: String {
+    static var baseURL: String {
         return "http://89.208.220.86"
     }
     

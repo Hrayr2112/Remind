@@ -10,7 +10,7 @@ import UIKit
 
 struct PhotoCollectionViewCellModel {
     
-    private let data: Image
+    let data: Image
     
     init(data: Image) {
         self.data = data

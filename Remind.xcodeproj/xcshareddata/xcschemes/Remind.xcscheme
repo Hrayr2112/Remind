@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "3821DFF6248B03380029BB1F"
-               BuildableName = "Remind.app"
+               BuildableName = "reMind.app"
                BlueprintName = "Remind"
                ReferencedContainer = "container:Remind.xcodeproj">
             </BuildableReference>
@@ -45,7 +45,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "3821DFF6248B03380029BB1F"
-            BuildableName = "Remind.app"
+            BuildableName = "reMind.app"
             BlueprintName = "Remind"
             ReferencedContainer = "container:Remind.xcodeproj">
          </BuildableReference>
@@ -62,7 +62,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "3821DFF6248B03380029BB1F"
-            BuildableName = "Remind.app"
+            BuildableName = "reMind.app"
             BlueprintName = "Remind"
             ReferencedContainer = "container:Remind.xcodeproj">
          </BuildableReference>

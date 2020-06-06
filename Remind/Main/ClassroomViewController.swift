@@ -195,7 +195,8 @@ extension ClassroomViewController: UICollectionViewDelegate & UICollectionViewDa
         if indexPath.row == photosViewModels.count - 1, indexPath.section == 1 {
             // Open Camera
         } else {
-            // Show Image
+            let previewer = PhotoPreviewer(images: photosViewModels.map { $0.data } )
+            previewer.open(from: self)
         }
     }
     
