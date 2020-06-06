@@ -7,6 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		246AAE74248B08EC002F987A /* Authorization.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 246AAE73248B08EC002F987A /* Authorization.storyboard */; };
+		246AAE76248B0949002F987A /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 246AAE75248B0949002F987A /* Colors.xcassets */; };
+		246AAE78248B09EB002F987A /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 246AAE77248B09EB002F987A /* UIColor+.swift */; };
+		246AAE7B248B0AD1002F987A /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 246AAE7A248B0AD1002F987A /* SignInViewController.swift */; };
+		246AAE7D248B0B31002F987A /* AnimationTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 246AAE7C248B0B31002F987A /* AnimationTextView.swift */; };
+		246AAE7F248B0B8C002F987A /* UIFont+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 246AAE7E248B0B8C002F987A /* UIFont+.swift */; };
+		246AAE83248B0BFA002F987A /* String+Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 246AAE82248B0BFA002F987A /* String+Validation.swift */; };
+		246AAE85248B1123002F987A /* MainRoutingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 246AAE84248B1123002F987A /* MainRoutingService.swift */; };
+		246AAE88248B1269002F987A /* ReachabilityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 246AAE87248B1269002F987A /* ReachabilityManager.swift */; };
+		24FB6874248B136600F56972 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24FB6873248B136600F56972 /* SignUpViewController.swift */; };
+		24FB6876248B145900F56972 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24FB6875248B145900F56972 /* Constants.swift */; };
 		3821DFFB248B03380029BB1F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3821DFFA248B03380029BB1F /* AppDelegate.swift */; };
 		3821DFFD248B03380029BB1F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3821DFFC248B03380029BB1F /* SceneDelegate.swift */; };
 		3821DFFF248B03380029BB1F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3821DFFE248B03380029BB1F /* ViewController.swift */; };
@@ -34,6 +45,17 @@
 /* Begin PBXFileReference section */
 		0A02AC83C5D8E6A4755BAFE8 /* Pods-Remind.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Remind.release.xcconfig"; path = "Target Support Files/Pods-Remind/Pods-Remind.release.xcconfig"; sourceTree = "<group>"; };
 		0BE8788911366DC54DCE62FF /* Pods-Remind.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Remind.debug.xcconfig"; path = "Target Support Files/Pods-Remind/Pods-Remind.debug.xcconfig"; sourceTree = "<group>"; };
+		246AAE73248B08EC002F987A /* Authorization.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Authorization.storyboard; sourceTree = "<group>"; };
+		246AAE75248B0949002F987A /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		246AAE77248B09EB002F987A /* UIColor+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
+		246AAE7A248B0AD1002F987A /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		246AAE7C248B0B31002F987A /* AnimationTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationTextView.swift; sourceTree = "<group>"; };
+		246AAE7E248B0B8C002F987A /* UIFont+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+.swift"; sourceTree = "<group>"; };
+		246AAE82248B0BFA002F987A /* String+Validation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Validation.swift"; sourceTree = "<group>"; };
+		246AAE84248B1123002F987A /* MainRoutingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainRoutingService.swift; sourceTree = "<group>"; };
+		246AAE87248B1269002F987A /* ReachabilityManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReachabilityManager.swift; sourceTree = "<group>"; };
+		24FB6873248B136600F56972 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		24FB6875248B145900F56972 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		3821DFF7248B03380029BB1F /* Remind.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Remind.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3821DFFA248B03380029BB1F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3821DFFC248B03380029BB1F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -72,6 +94,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		246AAE79248B0A84002F987A /* Authorization */ = {
+			isa = PBXGroup;
+			children = (
+				246AAE73248B08EC002F987A /* Authorization.storyboard */,
+				246AAE7A248B0AD1002F987A /* SignInViewController.swift */,
+				24FB6873248B136600F56972 /* SignUpViewController.swift */,
+			);
+			path = Authorization;
+			sourceTree = "<group>";
+		};
+		246AAE86248B1128002F987A /* SharedServices */ = {
+			isa = PBXGroup;
+			children = (
+				246AAE84248B1123002F987A /* MainRoutingService.swift */,
+				246AAE87248B1269002F987A /* ReachabilityManager.swift */,
+				24FB6875248B145900F56972 /* Constants.swift */,
+			);
+			path = SharedServices;
+			sourceTree = "<group>";
+		};
 		3821DFEE248B03380029BB1F = {
 			isa = PBXGroup;
 			children = (
@@ -97,11 +139,15 @@
 				3821E013248B03DC0029BB1F /* Networking */,
 				3821E012248B03D80029BB1F /* Protocols */,
 				3821E011248B03CF0029BB1F /* Extensions */,
+				246AAE86248B1128002F987A /* SharedServices */,
+				246AAE79248B0A84002F987A /* Authorization */,
 				3821DFFA248B03380029BB1F /* AppDelegate.swift */,
+				246AAE7C248B0B31002F987A /* AnimationTextView.swift */,
 				3821DFFC248B03380029BB1F /* SceneDelegate.swift */,
 				3821DFFE248B03380029BB1F /* ViewController.swift */,
 				3821E000248B03380029BB1F /* Main.storyboard */,
 				3821E006248B03390029BB1F /* Assets.xcassets */,
+				246AAE75248B0949002F987A /* Colors.xcassets */,
 				3821E008248B03390029BB1F /* LaunchScreen.storyboard */,
 				3821E00B248B03390029BB1F /* Info.plist */,
 				3821E003248B03380029BB1F /* Remind.xcdatamodeld */,
@@ -115,6 +161,9 @@
 				3821E015248B040A0029BB1F /* Alamofire+.swift */,
 				3821E017248B040A0029BB1F /* Array+.swift */,
 				3821E016248B040A0029BB1F /* UIImageView+.swift */,
+				246AAE77248B09EB002F987A /* UIColor+.swift */,
+				246AAE7E248B0B8C002F987A /* UIFont+.swift */,
+				246AAE82248B0BFA002F987A /* String+Validation.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -228,6 +277,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				246AAE76248B0949002F987A /* Colors.xcassets in Resources */,
+				246AAE74248B08EC002F987A /* Authorization.storyboard in Resources */,
 				3821E00A248B03390029BB1F /* LaunchScreen.storyboard in Resources */,
 				3821E007248B03390029BB1F /* Assets.xcassets in Resources */,
 				3821E002248B03380029BB1F /* Main.storyboard in Resources */,
@@ -283,6 +334,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				246AAE7F248B0B8C002F987A /* UIFont+.swift in Sources */,
+				246AAE85248B1123002F987A /* MainRoutingService.swift in Sources */,
 				3821E02E248B04610029BB1F /* ItemsList.swift in Sources */,
 				3821E019248B040A0029BB1F /* UIImageView+.swift in Sources */,
 				3821E018248B040A0029BB1F /* Alamofire+.swift in Sources */,
@@ -291,16 +344,23 @@
 				3821DFFF248B03380029BB1F /* ViewController.swift in Sources */,
 				3821E02D248B04610029BB1F /* Item.swift in Sources */,
 				3821E031248B04610029BB1F /* ItemResult.swift in Sources */,
+				246AAE7B248B0AD1002F987A /* SignInViewController.swift in Sources */,
+				246AAE7D248B0B31002F987A /* AnimationTextView.swift in Sources */,
 				3821E022248B04340029BB1F /* RequestService.swift in Sources */,
 				3821E023248B04340029BB1F /* APIAction.swift in Sources */,
 				3821E020248B04340029BB1F /* APIClient.swift in Sources */,
+				246AAE88248B1269002F987A /* ReachabilityManager.swift in Sources */,
 				3821DFFB248B03380029BB1F /* AppDelegate.swift in Sources */,
+				246AAE83248B0BFA002F987A /* String+Validation.swift in Sources */,
 				3821E005248B03380029BB1F /* Remind.xcdatamodeld in Sources */,
 				3821E030248B04610029BB1F /* ItemOrigin.swift in Sources */,
+				246AAE78248B09EB002F987A /* UIColor+.swift in Sources */,
 				3821DFFD248B03380029BB1F /* SceneDelegate.swift in Sources */,
 				3821E024248B04340029BB1F /* Resource.swift in Sources */,
 				3821E021248B04340029BB1F /* UserAction.swift in Sources */,
+				24FB6874248B136600F56972 /* SignUpViewController.swift in Sources */,
 				3821E01A248B040A0029BB1F /* Array+.swift in Sources */,
+				24FB6876248B145900F56972 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -446,7 +506,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 9B4B8VGXYW;
+				DEVELOPMENT_TEAM = P6TG56JU5M;
 				INFOPLIST_FILE = Remind/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -465,7 +525,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 9B4B8VGXYW;
+				DEVELOPMENT_TEAM = P6TG56JU5M;
 				INFOPLIST_FILE = Remind/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
