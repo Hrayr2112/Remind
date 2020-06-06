@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Eer-l9-4vI">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
@@ -147,12 +147,12 @@
                         <outlet property="progressIndicator" destination="c24-ZJ-WL1" id="1E7-WE-etF"/>
                         <outlet property="signUpContainer" destination="rkZ-3u-oCs" id="0IK-gz-504"/>
                         <outlet property="usernameView" destination="TGU-Wo-IwX" id="WiS-xy-tqB"/>
-                        <segue destination="Z5o-l6-WmB" kind="show" identifier="signUpSegue" id="XB9-qb-ONv"/>
+                        <segue destination="Eer-l9-4vI" kind="show" identifier="signUpSegue" id="XB9-qb-ONv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CJK-bW-sqH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2726" y="-970"/>
+            <point key="canvasLocation" x="3634.7826086956525" y="-970.3125"/>
         </scene>
         <!--Sign Up View Controller-->
         <scene sceneID="mAo-go-Cjm">
@@ -396,15 +396,32 @@
                         <outlet property="progressIndicator" destination="3xm-dN-I7z" id="WTG-K4-j9R"/>
                         <outlet property="signInContainerView" destination="4mu-fY-9hb" id="dsQ-6i-LI4"/>
                         <outlet property="signUpButton" destination="1bt-gj-o1w" id="Weo-eq-Y7H"/>
-                        <outlet property="termsAndConditionsContainerView" destination="HuF-C8-7Wl" id="v5K-49-Ay1"/>
-                        <outlet property="termsAndConditionsLabel" destination="OXr-Z6-mcZ" id="dNu-h4-1qp"/>
                         <outlet property="usernameView" destination="qOd-fv-gRg" id="pVq-ph-OyO"/>
                         <segue destination="ARD-xY-0ZP" kind="show" identifier="signInSegue" id="1rS-fK-3eR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lQZ-17-vgZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1758" y="-970"/>
+            <point key="canvasLocation" x="2668.1159420289855" y="-970.3125"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="CG9-Z3-1rt">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Eer-l9-4vI" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="8nH-p1-PAP"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="nXn-UM-0FB">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Z5o-l6-WmB" kind="relationship" relationship="rootViewController" id="40c-q4-yxc"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bSB-Wv-jsY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1757.9710144927537" y="-970.3125"/>
         </scene>
     </scenes>
     <resources>
@@ -416,7 +433,4 @@
             <color red="0.32899999618530273" green="0.32400000095367432" blue="0.4779999852180481" alpha="0.33000001311302185" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="1rS-fK-3eR"/>
-    </inferredMetricsTieBreakers>
 </document>

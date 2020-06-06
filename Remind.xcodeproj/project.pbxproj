@@ -19,7 +19,6 @@
 		24FB6874248B136600F56972 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24FB6873248B136600F56972 /* SignUpViewController.swift */; };
 		24FB6876248B145900F56972 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24FB6875248B145900F56972 /* Constants.swift */; };
 		3821DFFB248B03380029BB1F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3821DFFA248B03380029BB1F /* AppDelegate.swift */; };
-		3821DFFD248B03380029BB1F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3821DFFC248B03380029BB1F /* SceneDelegate.swift */; };
 		3821DFFF248B03380029BB1F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3821DFFE248B03380029BB1F /* ViewController.swift */; };
 		3821E002248B03380029BB1F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3821E000248B03380029BB1F /* Main.storyboard */; };
 		3821E005248B03380029BB1F /* Remind.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3821E003248B03380029BB1F /* Remind.xcdatamodeld */; };
@@ -65,7 +64,6 @@
 		24FB6875248B145900F56972 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		3821DFF7248B03380029BB1F /* Remind.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Remind.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3821DFFA248B03380029BB1F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		3821DFFC248B03380029BB1F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		3821DFFE248B03380029BB1F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		3821E001248B03380029BB1F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3821E004248B03380029BB1F /* Remind.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Remind.xcdatamodel; sourceTree = "<group>"; };
@@ -158,7 +156,6 @@
 				246AAE79248B0A84002F987A /* Authorization */,
 				3821DFFA248B03380029BB1F /* AppDelegate.swift */,
 				246AAE7C248B0B31002F987A /* AnimationTextView.swift */,
-				3821DFFC248B03380029BB1F /* SceneDelegate.swift */,
 				3821DFFE248B03380029BB1F /* ViewController.swift */,
 				3821E000248B03380029BB1F /* Main.storyboard */,
 				3821E006248B03390029BB1F /* Assets.xcassets */,
@@ -392,7 +389,6 @@
 				3821DFFB248B03380029BB1F /* AppDelegate.swift in Sources */,
 				3821E04E248B11C10029BB1F /* RegisterResponse.swift in Sources */,
 				3821E005248B03380029BB1F /* Remind.xcdatamodeld in Sources */,
-				3821DFFD248B03380029BB1F /* SceneDelegate.swift in Sources */,
 				3821E024248B04340029BB1F /* Resource.swift in Sources */,
 				3821E04C248B0E530029BB1F /* ClassroomsResponse.swift in Sources */,
 				3821E021248B04340029BB1F /* UserAction.swift in Sources */,
