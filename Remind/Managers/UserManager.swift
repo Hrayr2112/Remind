@@ -40,6 +40,10 @@ class UserManager {
         return UserDefaults.standard.value(forKey: "classromId") as? Int
     }
     
+    var imageId: Int? {
+        return UserDefaults.standard.value(forKey: "image_id") as? Int
+    }
+    
     func save(user: User) {
         UserDefaults.standard.setValue(user.username, forKey: "username")
         UserDefaults.standard.setValue(user.email, forKey: "email")
@@ -67,6 +71,10 @@ class UserManager {
     
     func set(token: String) {
         UserDefaults.standard.setValue(token, forKey: "token")
+    }
+    
+    func set(imageId: Int) {
+        UserDefaults.standard.setValue(imageId, forKey: "image_id")
     }
     
     func removeUser() {

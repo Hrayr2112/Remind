@@ -13,7 +13,7 @@ class PhotoCollectionViewCell: UICollectionViewCell, NibReusable {
     
     // MARK: - UI
     
-    @IBOutlet private var imageView: UIImageView!
+    @IBOutlet var imageView: UIImageView!
     
     // MARK: - Variables
     
