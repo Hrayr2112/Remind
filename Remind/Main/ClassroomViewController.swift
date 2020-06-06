@@ -40,7 +40,7 @@ class ClassroomViewController: UIViewController {
     }
     private var photosViewModels: [PhotoCollectionViewCellModel] = [] {
         didSet {
-            peopleTableView.reloadData()
+            photosCollectionView.reloadData()
         }
     }
     
@@ -132,7 +132,7 @@ class ClassroomViewController: UIViewController {
                             PhotoCollectionViewCellModel(data: Image(id: 1, name: "11 класс")),
                             PhotoCollectionViewCellModel(data: Image(id: 2, name: "10 класс")),
                             PhotoCollectionViewCellModel(data: Image(id: 3, name: "11 класс")),
-                            PhotoCollectionViewCellModel(data: Image(id: 4, name: "10 класс")),]
+                            PhotoCollectionViewCellModel(data: Image(id: 4, name: "10 класс"))]
     }
     
     // MARK: - Actions
