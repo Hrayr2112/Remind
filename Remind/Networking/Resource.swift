@@ -103,8 +103,8 @@ class JoinClassroomResource: Resource<JoinClassroomResponse> {
 
 class UploadImageResource: Resource<UploadImageResponse> {
     
-    init(model: Image, content: Data) {
-        super.init(request: UserAction.uploadImage(image: model, content: content)) { response -> Result<UploadImageResponse> in
+    init(name: String, content: Data, userId: Int) {
+        super.init(request: UserAction.uploadImage(name: name, content: content, userId: userId)) { response -> Result<UploadImageResponse> in
             if let data = response as? Data {
                 do {
                     let uploadImageResource = try JSONDecoder().decode(UploadImageResponse.self, from: data)
