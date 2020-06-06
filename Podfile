@@ -10,5 +10,6 @@ target 'Remind' do
 pod 'Alamofire', '4.9.1'
 pod 'Reusable'
 pod 'Kingfisher'
+pod 'CameraKit-iOS'
 
 end

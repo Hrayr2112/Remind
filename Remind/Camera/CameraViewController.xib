@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CameraViewController" customModule="Remind" customModuleProvider="target">
+            <connections>
+                <outlet property="cameraContainerView" destination="msm-7F-KJx" id="Fs8-vy-OgS"/>
+                <outlet property="captureButton" destination="1Jq-bH-jUp" id="Hfn-JT-fVi"/>
+                <outlet property="captureButtonContainerView" destination="pZ2-bo-NIN" id="OUK-1j-ZeG"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="msm-7F-KJx">
+                    <rect key="frame" x="-20" y="0.0" width="454" height="754"/>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uUg-3b-VS2">
+                    <rect key="frame" x="0.0" y="754" width="414" height="108"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pZ2-bo-NIN">
+                            <rect key="frame" x="172" y="19" width="70" height="70"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Jq-bH-jUp" customClass="CaptureButton" customModule="Remind" customModuleProvider="target">
+                                    <rect key="frame" x="3" y="3" width="64" height="64"/>
+                                    <color key="backgroundColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <connections>
+                                        <action selector="captureButtonPressed" destination="-1" eventType="touchUpInside" id="giE-bL-MJH"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="70" id="0Lh-Pp-5IQ"/>
+                                <constraint firstAttribute="trailing" secondItem="1Jq-bH-jUp" secondAttribute="trailing" constant="3" id="1j7-Xy-0RD"/>
+                                <constraint firstItem="1Jq-bH-jUp" firstAttribute="top" secondItem="pZ2-bo-NIN" secondAttribute="top" constant="3" id="FcS-e5-PpQ"/>
+                                <constraint firstItem="1Jq-bH-jUp" firstAttribute="leading" secondItem="pZ2-bo-NIN" secondAttribute="leading" constant="3" id="LWw-bR-7Ie"/>
+                                <constraint firstAttribute="bottom" secondItem="1Jq-bH-jUp" secondAttribute="bottom" constant="3" id="STO-wA-U93"/>
+                                <constraint firstAttribute="width" secondItem="pZ2-bo-NIN" secondAttribute="height" id="vVd-90-0MM"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="pZ2-bo-NIN" firstAttribute="centerY" secondItem="uUg-3b-VS2" secondAttribute="centerY" id="1cx-dB-c7I"/>
+                        <constraint firstItem="pZ2-bo-NIN" firstAttribute="centerX" secondItem="uUg-3b-VS2" secondAttribute="centerX" id="87W-PV-jUt"/>
+                        <constraint firstAttribute="height" constant="108" id="kNq-le-jew"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="msm-7F-KJx" secondAttribute="trailing" constant="-20" id="3bq-bY-xii"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="uUg-3b-VS2" secondAttribute="trailing" id="3it-2l-F55"/>
+                <constraint firstItem="uUg-3b-VS2" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="HAl-gC-uHJ"/>
+                <constraint firstItem="msm-7F-KJx" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="-20" id="S0Y-zx-kkm"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="uUg-3b-VS2" secondAttribute="bottom" id="WBf-Vx-7nZ"/>
+                <constraint firstItem="msm-7F-KJx" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="lcO-qG-b3t"/>
+                <constraint firstItem="uUg-3b-VS2" firstAttribute="top" secondItem="msm-7F-KJx" secondAttribute="bottom" id="nRc-Um-Drq"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="139" y="128"/>
+        </view>
+    </objects>
+</document>
