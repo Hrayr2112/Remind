@@ -29,6 +29,8 @@ class ExploreViewController: UIViewController {
         }
     }
     
+    private var fakeImages: [UIImage] = []
+    
     // MARK: - Lifecycle
 
     override func viewDidLoad() {
@@ -53,12 +55,19 @@ class ExploreViewController: UIViewController {
                             PhotoCollectionViewCellModel(data: Image(id: 1, name: "11 класс")),
                             PhotoCollectionViewCellModel(data: Image(id: 2, name: "10 класс")),
                             PhotoCollectionViewCellModel(data: Image(id: 3, name: "11 класс")),
-                            PhotoCollectionViewCellModel(data: Image(id: 4, name: "10 класс")),
                             PhotoCollectionViewCellModel(data: Image(id: 0, name: "10 класс")),
                             PhotoCollectionViewCellModel(data: Image(id: 1, name: "11 класс")),
                             PhotoCollectionViewCellModel(data: Image(id: 2, name: "10 класс")),
-                            PhotoCollectionViewCellModel(data: Image(id: 3, name: "11 класс")),
-                            PhotoCollectionViewCellModel(data: Image(id: 4, name: "10 класс"))]
+                            PhotoCollectionViewCellModel(data: Image(id: 3, name: "11 класс"))]
+        
+        fakeImages = [UIImage(named: "family_one") ?? UIImage(),
+                      UIImage(named: "family_two") ?? UIImage(),
+                      UIImage(named: "family_three") ?? UIImage(),
+                      UIImage(named: "family_four") ?? UIImage(),
+                      UIImage(named: "family_five") ?? UIImage(),
+                      UIImage(named: "family_six") ?? UIImage(),
+                      UIImage(named: "family_seven") ?? UIImage(),
+                      UIImage(named: "family_eight") ?? UIImage()]
     }
 
 }
@@ -77,12 +86,13 @@ extension ExploreViewController: UICollectionViewDelegate & UICollectionViewData
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return photosViewModels.count
+        return fakeImages.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(for: indexPath) as PhotoCollectionViewCell
         cell.viewModel = photosViewModels[safe: indexPath.row]
+        cell.imageView.image = fakeImages[safe: indexPath.row]
         return cell
     }
 }

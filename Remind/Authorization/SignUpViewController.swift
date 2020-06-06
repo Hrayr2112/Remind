@@ -169,6 +169,9 @@ class SignUpViewController: UIViewController, AnimationTextViewDelegate {
                 switch result {
                 case let .success(response):
                     UserManager.shared.save(user: response.user)
+                    if let imageId = response.user.images?.first?.id {
+                        UserManager.shared.set(imageId: imageId)
+                    }
                     UserManager.shared.set(token: response.token)
                     MainRoutingService.openApplication(from: self)
                 case let .failure(error):
