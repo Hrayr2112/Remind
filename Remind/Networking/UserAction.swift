@@ -14,7 +14,7 @@ enum UserAction {
     case classrooms(name: String)
     case classroom(id: Int)
     case join(classroomId: Int)
-    case uploadImage(image: Image, content: Data)
+    case uploadImage(name: String, content: Data, userId: Int)
     case image(id: Int)
     case generate(background: Data, classroomId: Int)
     case explore
@@ -43,8 +43,8 @@ extension UserAction: APIAction {
             return "/api/v1/classrooms/\(id)}"
         case let .join(id):
             return "/api/v1/classrooms/\(id)/join"
-        case let .uploadImage(image, _):
-            return "/api/v1/users/\(image.id)/uploadImage"
+        case let .uploadImage(_, _, userId):
+            return "/api/v1/users/\(userId)/uploadImage"
         case let .image(id):
             return "/image/\(id)"
         case .generate:
@@ -65,8 +65,8 @@ extension UserAction: APIAction {
             return ["email": user.email ?? "", "username": user.username ?? "", "password": user.password]
         case let .classrooms(name):
             return ["name": name]
-        case let .uploadImage(image, content):
-            return ["name": image.name, "content": content]
+        case let .uploadImage(name, content, _):
+            return ["name": name, "content": content]
         case let .generate(background, classroomId):
             return ["background": background, "classroomId": classroomId]
         case .classroom, .join, .image, .explore:

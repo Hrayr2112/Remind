@@ -41,8 +41,8 @@ struct RequestService {
         api.request(JoinClassroomResource(id: id), completion: completion)
     }
     
-    func uploadImage(model: Image, content: Data, _ completion: @escaping (Result<UploadImageResponse>) -> Void) {
-        api.request(UploadImageResource(model: model, content: content), completion: completion)
+    func uploadImage(name: String, content: Data, userId: Int, _ completion: @escaping (Result<UploadImageResponse>) -> Void) {
+        api.request(UploadImageResource(name: name, content: content, userId: userId), completion: completion)
     }
     
     func getImage(id: Int, _ completion: @escaping (Result<ConvertedImageResponse>) -> Void) {
