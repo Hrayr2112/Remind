@@ -61,6 +61,7 @@
 		3821E078248BC5CE0029BB1F /* PhotoCollectionViewCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3821E077248BC5CE0029BB1F /* PhotoCollectionViewCellModel.swift */; };
 		3821E07C248BC8280029BB1F /* AddPhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3821E07A248BC8280029BB1F /* AddPhotoCollectionViewCell.swift */; };
 		3821E07D248BC8280029BB1F /* AddPhotoCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3821E07B248BC8280029BB1F /* AddPhotoCollectionViewCell.xib */; };
+		3821E080248BE5F80029BB1F /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3821E07F248BE5F80029BB1F /* UserManager.swift */; };
 		DF89518E80A90E876DC8E40E /* Pods_Remind.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9707412B62D5C03DC0219DC0 /* Pods_Remind.framework */; };
 /* End PBXBuildFile section */
 
@@ -125,6 +126,7 @@
 		3821E077248BC5CE0029BB1F /* PhotoCollectionViewCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewCellModel.swift; sourceTree = "<group>"; };
 		3821E07A248BC8280029BB1F /* AddPhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPhotoCollectionViewCell.swift; sourceTree = "<group>"; };
 		3821E07B248BC8280029BB1F /* AddPhotoCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddPhotoCollectionViewCell.xib; sourceTree = "<group>"; };
+		3821E07F248BE5F80029BB1F /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
 		9707412B62D5C03DC0219DC0 /* Pods_Remind.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Remind.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -202,6 +204,7 @@
 		3821DFF9248B03380029BB1F /* Remind */ = {
 			isa = PBXGroup;
 			children = (
+				3821E07E248BE5E90029BB1F /* Managers */,
 				3821E068248B78EC0029BB1F /* Cells */,
 				3821E048248B0D9A0029BB1F /* Response */,
 				3821E025248B04460029BB1F /* Models */,
@@ -322,6 +325,14 @@
 				3821E07B248BC8280029BB1F /* AddPhotoCollectionViewCell.xib */,
 			);
 			path = AddPhotoCollectionViewCell;
+			sourceTree = "<group>";
+		};
+		3821E07E248BE5E90029BB1F /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				3821E07F248BE5F80029BB1F /* UserManager.swift */,
+			);
+			path = Managers;
 			sourceTree = "<group>";
 		};
 		7A50D83306194A425F9DE05D /* Frameworks */ = {
@@ -510,6 +521,7 @@
 				24FB6874248B136600F56972 /* SignUpViewController.swift in Sources */,
 				3821E01A248B040A0029BB1F /* Array+.swift in Sources */,
 				24FB6876248B145900F56972 /* Constants.swift in Sources */,
+				3821E080248BE5F80029BB1F /* UserManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

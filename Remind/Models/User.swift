@@ -12,4 +12,14 @@ struct User: Decodable {
     let email: String
     let classromId: Int?
     let images: [Image]?
+    let password: String?
+    
+    init(id: Int, username: String, email: String, classromId: Int?, images: [Image]?, password: String? = nil) {
+        self.id = id
+        self.username = username
+        self.email = email
+        self.classromId = classromId
+        self.images = images
+        self.password = password
+    }
 }
