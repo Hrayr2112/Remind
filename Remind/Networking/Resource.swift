@@ -103,7 +103,7 @@ class JoinClassroomResource: Resource<JoinClassroomResponse> {
 
 class UploadImageResource: Resource<UploadImageResponse> {
     
-    init(name: String, content: Data, userId: Int) {
+    init(name: String, content: String, userId: Int) {
         super.init(request: UserAction.uploadImage(name: name, content: content, userId: userId)) { response -> Result<UploadImageResponse> in
             if let data = response as? Data {
                 do {

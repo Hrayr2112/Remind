@@ -28,7 +28,7 @@ class MeViewController: UIViewController {
     private func configureViews() {
         title = "Profile"
         
-        avatarImageView.layer.cornerRadius = avatarImageView.frame.width/2
+        //avatarImageView.layer.cornerRadius = avatarImageView.frame.width/2
         avatarImageView.layer.masksToBounds = true
         
         usernameContainerView.layer.shadowColor = UIColor.black.cgColor
@@ -55,7 +55,14 @@ class MeViewController: UIViewController {
     @IBAction private func choosePhotoTapped() {
         let cameraViewController = CameraViewController()
         cameraViewController.captureBlock = { image in
-            // upload image to backend
+            guard let username = UserManager.shared.username,
+                let userId = UserManager.shared.id,
+                let imageBase64 = image.pngData()?.base64EncodedString() else { return }
+            RequestService().uploadImage(name: username.appending(UUID().uuidString),
+                                         content: imageBase64,
+                                         userId: userId) { uploadImageResponse in
+                                            print("uploaded")
+            }
             self.avatarImageView.image = image
         }
         present(cameraViewController, animated: true, completion: nil)
