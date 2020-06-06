@@ -10,5 +10,5 @@ struct Classroom: Decodable {
     let id: Int
     let name: String
     let participants: [User]
-    let hasImage: Bool
+    let images: [Image]
 }

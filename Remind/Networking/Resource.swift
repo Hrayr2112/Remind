@@ -84,13 +84,13 @@ class ClassroomsResource: Resource<Classroom> {
     }
 }
 
-class JoinClassroomResource: Resource<JoinClassroomResponse> {
+class JoinClassroomResource: Resource<Classroom> {
     
     init(id: Int) {
-        super.init(request: UserAction.join(classroomId: id)) { response -> Result<JoinClassroomResponse> in
+        super.init(request: UserAction.join(classroomId: id)) { response -> Result<Classroom> in
             if let data = response as? Data {
                 do {
-                    let joinClassroomInfo = try JSONDecoder().decode(JoinClassroomResponse.self, from: data)
+                    let joinClassroomInfo = try JSONDecoder().decode(Classroom.self, from: data)
                     return Result.success(joinClassroomInfo)
                 } catch {
                     return Result.failure(CustomError(value: error.localizedDescription))
