@@ -11,7 +11,6 @@ import UIKit
 class ClassroomViewController: UIViewController {
     
     private enum Locals {
-        static let tableBackgroundColor = UIColor(red: 246 / 255.0, green: 246 / 255.0, blue: 246 / 255.0, alpha: 1)
         static let cellHeight: CGFloat = 57
     }
     
@@ -20,12 +19,16 @@ class ClassroomViewController: UIViewController {
         case photos = 1
     }
     
+    // MARK: - UI
+    
     @IBOutlet weak private var mainScrollView: UIScrollView!
     @IBOutlet weak private var peopleTableView: UITableView!
     @IBOutlet weak private var photosCollectionView: UICollectionView!
     @IBOutlet weak private var peopleButton: UIButton!
     @IBOutlet weak private var photosButton: UIButton!
     @IBOutlet weak private var tabLineLeadingConstraint: NSLayoutConstraint!
+    
+    // MARK: - Variables
     
     private var selectedTab: ClassroomTab = .people
     private var isAnimating = false
@@ -75,7 +78,6 @@ class ClassroomViewController: UIViewController {
     private func configureTableView() {
         peopleTableView.delegate = self
         peopleTableView.dataSource = self
-        peopleTableView.backgroundColor = Locals.tableBackgroundColor
         
         peopleTableView.register(cellType: PeopleTableViewCell.self)
         
