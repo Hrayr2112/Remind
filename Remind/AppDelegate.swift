@@ -15,9 +15,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        UITabBar.appearance().tintColor = UIColor.main
         
-        let vc = UIStoryboard(name: "Authorization", bundle: nil).instantiateInitialViewController()
+        // let vc = UIStoryboard(name: "Authorization", bundle: nil).instantiateInitialViewController()
+        // ARAM HRO TODO: add if to choose first view controller
+         let vc = UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController()
         window?.rootViewController = vc
         
         return true
