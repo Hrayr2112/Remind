@@ -33,12 +33,7 @@ class PeopleTableViewCell: UITableViewCell, NibReusable {
     private func updateView(with viewModel: PeopleTableViewCellModel) {
         usernameLabel.text = viewModel.username
         emailLabel.text = viewModel.email
-        
-        if viewModel.id == 0 {
-            photoAddedView.isHidden = false
-        } else {
-            photoAddedView.isHidden = true
-        }
+        photoAddedView.isHidden = !viewModel.isPhotoAdded
         selectionStyle = .none
     }
 }

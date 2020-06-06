@@ -34,4 +34,11 @@ struct PeopleTableViewCellModel {
             return UIImage()
         }
     }
+    
+    var isPhotoAdded: Bool {
+        if let imagesCount = data.imagesCount, imagesCount > 0 {
+            return true
+        }
+        return false
+    }
 }

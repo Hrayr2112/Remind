@@ -11,15 +11,17 @@ struct User: Decodable {
     let username: String
     let email: String
     let classromId: Int?
-    let hasImage: Bool
+    let images: [Image]?
     let password: String?
+    let imagesCount: Int?
     
-    init(id: Int, username: String, email: String, classromId: Int?, hasImage: Bool, password: String? = nil) {
+    init(id: Int, username: String, email: String, classromId: Int?, images: [Image]?, password: String? = nil, imagesCount: Int? = nil) {
         self.id = id
         self.username = username
         self.email = email
         self.classromId = classromId
-        self.hasImage = hasImage
+        self.imagesCount = imagesCount
         self.password = password
+        self.images = images
     }
 }

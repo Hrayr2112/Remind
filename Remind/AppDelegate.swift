@@ -16,6 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         UITabBar.appearance().tintColor = UIColor.main
+        
         var vc: UIViewController?
         if UserManager.shared.username != nil {
             vc = UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController()

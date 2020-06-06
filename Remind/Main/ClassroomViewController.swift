@@ -52,6 +52,7 @@ class ClassroomViewController: UIViewController {
         title = "Classroom"
         configureTableView()
         configureCollectionView()
+        loadData()
     }
     
     override func viewWillAppear(_ animated: Bool) {

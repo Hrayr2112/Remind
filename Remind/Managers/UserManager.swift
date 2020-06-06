@@ -48,8 +48,7 @@ class UserManager {
         UserDefaults.standard.setValue(user.username, forKey: "username")
         UserDefaults.standard.setValue(user.email, forKey: "email")
         UserDefaults.standard.setValue(user.id, forKey: "id")
-        //TODO: FIX
-//        UserDefaults.standard.setValue(user.images, forKey: "images")
+        UserDefaults.standard.setValue(user.images, forKey: "images")
         UserDefaults.standard.setValue(user.classromId, forKey: "classromId")
         UserDefaults.standard.setValue(user.password, forKey: "password")
     }
