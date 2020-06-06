@@ -48,5 +48,6 @@ class PeopleTableViewCell: UITableViewCell, NibReusable {
         } else {
             photoAddedView.isHidden = true
         }
+        selectionStyle = .none
     }
 }
