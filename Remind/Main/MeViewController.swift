@@ -44,8 +44,10 @@ class MeViewController: UIViewController {
     
     private func fillData() {
         // load user info from userDefaults
-        usernameLabel.text = "Ishxo"
-        emailLabel.text = "pussyDestroyer69@gmail.com"
+        
+        usernameLabel.text = UserManager.shared.username
+        emailLabel.text = UserManager.shared.email
+//        avatarImageView.kf.setImage(with: UserManager.shared.images?.first?.imageUrl)
     }
     
     // MARK: - Actions

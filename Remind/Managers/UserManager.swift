@@ -6,9 +6,10 @@
 //  Copyright © 2020 Remind. All rights reserved.
 //
 
-import UIKit
+import Foundation
 
 class UserManager {
+    
     static let shared = UserManager()
     
     var token: String? {
@@ -75,4 +76,5 @@ class UserManager {
         UserDefaults.standard.removeObject(forKey: "images")
         UserDefaults.standard.removeObject(forKey: "classromId")
     }
+    
 }
