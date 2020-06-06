@@ -12,9 +12,21 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        // TODO: REMOVE THIS SAMPLE
+        
+        let service = RequestService()
+        service.createClassroom(name: "Sample") { result in
+            switch result {
+            case let .success(response):
+                
+                break
+            case let .failure(error):
+                
+                break
+            }
+        }
     }
-
 
 }
 
