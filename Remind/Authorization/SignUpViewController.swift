@@ -165,7 +165,8 @@ class SignUpViewController: UIViewController, AnimationTextViewDelegate {
             //(email: emailView.text,
 //            password: passwordView.text,
 //            username: usernameView.text)
-//            in completion  presentMainVC
+//            in completion  this
+            MainRoutingService.openApplication(from: self)
         } else {
             errorLabel.text = ErrorMessage.invalidPassword
         }

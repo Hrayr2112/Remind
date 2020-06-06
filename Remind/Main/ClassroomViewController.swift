@@ -128,6 +128,18 @@ class ClassroomViewController: UIViewController {
     
 }
 
+extension ClassroomViewController: UIScrollViewDelegate {
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if scrollView == self.mainScrollView {
+            let width = scrollView.frame.size.width;
+            let page = Int((scrollView.contentOffset.x + (0.5 * width)) / width);
+            selectedTab = ClassroomTab(rawValue: page < 0 ? 0 : page > 1 ? 1 : page)!
+            configureTopBarForSelectedTab(animated: true)
+        }
+    }
+}
+
 
 // MARK: - UITableViewDelegate & UITableViewDataSource
 extension ClassroomViewController: UITableViewDelegate, UITableViewDataSource {

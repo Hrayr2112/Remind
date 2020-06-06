@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="rx3-C4-LYJ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="rx3-C4-LYJ">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -52,7 +52,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="UUI-1o-dQH"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Explore" id="XW1-fQ-d7E"/>
+                    <tabBarItem key="tabBarItem" title="Explore" image="explore_tab_bar" id="XW1-fQ-d7E"/>
                     <connections>
                         <outlet property="mainCollectionView" destination="fqw-ML-Y7f" id="bgG-sl-Ha7"/>
                     </connections>
@@ -71,7 +71,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="f7U-JP-5vO"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Me" id="tsA-9d-kSH"/>
+                    <tabBarItem key="tabBarItem" title="Me" image="profile_tab_bar" id="tsA-9d-kSH"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0aD-q0-Ywx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -169,6 +169,9 @@
                                     <constraint firstItem="fMJ-qi-Udg" firstAttribute="leading" secondItem="0b2-Dc-y0A" secondAttribute="leading" id="f1h-8P-rMZ"/>
                                     <constraint firstItem="ab0-LC-edo" firstAttribute="leading" secondItem="fMJ-qi-Udg" secondAttribute="trailing" constant="2" id="k3c-Gf-Jy1"/>
                                 </constraints>
+                                <connections>
+                                    <outlet property="delegate" destination="lgT-Mb-0mX" id="5w9-qx-Smu"/>
+                                </connections>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -183,7 +186,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="f7X-ok-F3y"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Classroom" id="Wdr-Q7-T7J"/>
+                    <tabBarItem key="tabBarItem" title="Classroom" image="classroom_tab_bar" id="Wdr-Q7-T7J"/>
                     <connections>
                         <outlet property="mainScrollView" destination="0b2-Dc-y0A" id="JQJ-Gd-RGS"/>
                         <outlet property="peopleButton" destination="Ece-UI-7wQ" id="YoL-VG-PbX"/>
@@ -220,6 +223,9 @@
         </scene>
     </scenes>
     <resources>
+        <image name="classroom_tab_bar" width="32" height="32"/>
+        <image name="explore_tab_bar" width="32" height="32"/>
+        <image name="profile_tab_bar" width="32" height="32"/>
         <namedColor name="main">
             <color red="0.9137254901960784" green="0.47843137254901963" blue="0.43137254901960786" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

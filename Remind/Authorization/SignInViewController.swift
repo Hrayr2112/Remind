@@ -109,6 +109,8 @@ class SignInViewController: UIViewController, AnimationTextViewDelegate {
 //            }
 //            self?.setUserInterfaceEnabled(true)
 //        }
+        // in completion
+        MainRoutingService.openApplication(from: self)
     }
     
     private func setUserInterfaceEnabled(_ enabled: Bool) {
