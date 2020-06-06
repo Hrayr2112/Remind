@@ -12,11 +12,13 @@ import QuickLook
 class PhotoPreviewer: NSObject {
     
     let images: [Image]
+    let preselectedIndex: Int
     
     // MARK: - Initialization
     
-    init(images: [Image]) {
+    init(images: [Image], preselectedIndex: Int) {
         self.images = images
+        self.preselectedIndex = preselectedIndex
     }
     
     // MARK: - Public
@@ -24,6 +26,7 @@ class PhotoPreviewer: NSObject {
     func open(from viewController: UIViewController) {
         let previewVC = QLPreviewController()
         previewVC.dataSource = self
+        previewVC.currentPreviewItemIndex = preselectedIndex
         
         viewController.present(previewVC, animated: true, completion: nil)
     }

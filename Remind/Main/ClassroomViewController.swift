@@ -192,10 +192,10 @@ extension ClassroomViewController: UITableViewDelegate, UITableViewDataSource {
 extension ClassroomViewController: UICollectionViewDelegate & UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        if indexPath.row == photosViewModels.count - 1, indexPath.section == 1 {
+        if indexPath.row == photosViewModels.count - 1 {
             // Open Camera
         } else {
-            let previewer = PhotoPreviewer(images: photosViewModels.map { $0.data } )
+            let previewer = PhotoPreviewer(images: photosViewModels.map { $0.data }, preselectedIndex: indexPath.row )
             previewer.open(from: self)
         }
     }

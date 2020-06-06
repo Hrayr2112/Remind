@@ -68,7 +68,8 @@ class ExploreViewController: UIViewController {
 extension ExploreViewController: UICollectionViewDelegate & UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        // Show Image
+        let previewer = PhotoPreviewer(images: photosViewModels.map { $0.data }, preselectedIndex: indexPath.row )
+        previewer.open(from: self)
     }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
