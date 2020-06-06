@@ -45,7 +45,6 @@
 		3821E046248B0D970029BB1F /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3821E042248B0D970029BB1F /* Image.swift */; };
 		3821E047248B0D970029BB1F /* NewUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3821E043248B0D970029BB1F /* NewUser.swift */; };
 		3821E04A248B0DA40029BB1F /* LoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3821E049248B0DA40029BB1F /* LoginResponse.swift */; };
-		3821E04C248B0E530029BB1F /* ClassroomsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3821E04B248B0E530029BB1F /* ClassroomsResponse.swift */; };
 		3821E04E248B11C10029BB1F /* RegisterResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3821E04D248B11C10029BB1F /* RegisterResponse.swift */; };
 		3821E050248B129F0029BB1F /* JoinClassroomResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3821E04F248B129F0029BB1F /* JoinClassroomResponse.swift */; };
 		3821E052248B139D0029BB1F /* UploadImageResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3821E051248B139D0029BB1F /* UploadImageResponse.swift */; };
@@ -108,7 +107,6 @@
 		3821E042248B0D970029BB1F /* Image.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
 		3821E043248B0D970029BB1F /* NewUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewUser.swift; sourceTree = "<group>"; };
 		3821E049248B0DA40029BB1F /* LoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponse.swift; sourceTree = "<group>"; };
-		3821E04B248B0E530029BB1F /* ClassroomsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassroomsResponse.swift; sourceTree = "<group>"; };
 		3821E04D248B11C10029BB1F /* RegisterResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterResponse.swift; sourceTree = "<group>"; };
 		3821E04F248B129F0029BB1F /* JoinClassroomResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinClassroomResponse.swift; sourceTree = "<group>"; };
 		3821E051248B139D0029BB1F /* UploadImageResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadImageResponse.swift; sourceTree = "<group>"; };
@@ -277,7 +275,6 @@
 			isa = PBXGroup;
 			children = (
 				3821E049248B0DA40029BB1F /* LoginResponse.swift */,
-				3821E04B248B0E530029BB1F /* ClassroomsResponse.swift */,
 				3821E04D248B11C10029BB1F /* RegisterResponse.swift */,
 				3821E04F248B129F0029BB1F /* JoinClassroomResponse.swift */,
 				3821E051248B139D0029BB1F /* UploadImageResponse.swift */,
@@ -513,7 +510,6 @@
 				3821E04E248B11C10029BB1F /* RegisterResponse.swift in Sources */,
 				3821E005248B03380029BB1F /* Remind.xcdatamodeld in Sources */,
 				3821E024248B04340029BB1F /* Resource.swift in Sources */,
-				3821E04C248B0E530029BB1F /* ClassroomsResponse.swift in Sources */,
 				3821E075248BC5B00029BB1F /* PhotoCollectionViewCell.swift in Sources */,
 				3821E021248B04340029BB1F /* UserAction.swift in Sources */,
 				24FB687B248B6D3700F56972 /* ExploreViewController.swift in Sources */,

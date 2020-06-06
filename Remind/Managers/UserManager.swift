@@ -15,6 +15,30 @@ class UserManager {
         return UserDefaults.standard.value(forKey: "token") as? String
     }
     
+    var username: String? {
+        return UserDefaults.standard.value(forKey: "username") as? String
+    }
+    
+    var email: String? {
+        return UserDefaults.standard.value(forKey: "email") as? String
+    }
+    
+    var id: Int? {
+        return UserDefaults.standard.value(forKey: "id") as? Int
+    }
+    
+    var password: String? {
+        return UserDefaults.standard.value(forKey: "password") as? String
+    }
+    
+    var images: [Image]? {
+        return UserDefaults.standard.value(forKey: "images") as? [Image]
+    }
+    
+    var classroomId: Int? {
+        return UserDefaults.standard.value(forKey: "classromId") as? Int
+    }
+    
     func save(user: User) {
         UserDefaults.standard.setValue(user.username, forKey: "username")
         UserDefaults.standard.setValue(user.email, forKey: "email")
@@ -42,24 +66,6 @@ class UserManager {
     
     func set(token: String) {
         UserDefaults.standard.setValue(token, forKey: "token")
-    }
-    
-    func current() -> User? {
-        guard
-            let username = UserDefaults.standard.value(forKey: "username") as? String,
-            let email = UserDefaults.standard.value(forKey: "email") as? String,
-            let id = UserDefaults.standard.value(forKey: "id") as? Int else {
-                return nil
-        }
-        let images = UserDefaults.standard.value(forKey: "images") as? [Image]
-        let classroomId = UserDefaults.standard.value(forKey: "classromId") as? Int
-        let password = UserDefaults.standard.value(forKey: "password") as? String
-        return User(id: id,
-                    username: username,
-                    email: email,
-                    classromId: classroomId,
-                    images: images,
-                    password: password)
     }
     
     func removeUser() {

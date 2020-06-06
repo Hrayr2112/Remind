@@ -160,13 +160,21 @@ class SignUpViewController: UIViewController, AnimationTextViewDelegate {
                               "password": passwordView.text,
                               "username": usernameView.text]
             print("LOGIN WITH PARAMS \(parameters)")
-            // SIGN UP
-            // params
-            //(email: emailView.text,
-//            password: passwordView.text,
-//            username: usernameView.text)
-//            in completion  this
-            MainRoutingService.openApplication(from: self)
+            
+            progressIndicator.startAnimating()
+            let service = RequestService()
+            let newUser = NewUser(email: emailView.text, username: usernameView.text, password: passwordView.text)
+            service.signUp(user: newUser, confirmedPassword: passwordView.text) { result in
+                self.progressIndicator.stopAnimating()
+                switch result {
+                case let .success(response):
+                    UserManager.shared.save(user: response.user)
+                    UserManager.shared.set(token: response.token)
+                    MainRoutingService.openApplication(from: self)
+                case let .failure(error):
+                    self.errorLabel.text = error.localizedDescription
+                }
+            }
         } else {
             errorLabel.text = ErrorMessage.invalidPassword
         }

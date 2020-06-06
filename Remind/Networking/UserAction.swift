@@ -34,9 +34,9 @@ extension UserAction: APIAction {
     var path: String {
         switch self {
         case .signUp:
-            return "/api/v1/signup"
+            return "/api/v1/signUp"
         case .signIn:
-            return "/api/v1/signin"
+            return "/api/v1/signIn"
         case .classrooms:
             return "/api/v1/classrooms"
         case let .classroom(id):
@@ -75,11 +75,22 @@ extension UserAction: APIAction {
     }
     
     var baseURL: String {
-        return ""
+        return "http://89.208.220.86"
     }
     
     var authHeader: [String : String] {
-        return ["Content-Type": "application/json", "Accept" : "application/json"]
+        switch self {
+        case .signIn, .signUp:
+            return ["Content-Type": "application/json", "Accept" : "application/json"]
+        default:
+            guard let token = UserManager.shared.token else {
+                return [:]
+            }
+            let bearerToken = "Bearer" + " " + token
+            return ["Content-Type": "application/json",
+                    "Accept" : "application/json",
+                    "Authorization" : bearerToken]
+        }
     }
     
     var encoding: ParameterEncoding {

@@ -53,13 +53,13 @@ class LoginResource: Resource<LoginResponse> {
 }
 
 
-class ClassroomsResource: Resource<ClassroomsResponse> {
+class ClassroomsResource: Resource<Classroom> {
     
     init(name: String) {
-        super.init(request: UserAction.classrooms(name: name)) { response -> Result<ClassroomsResponse> in
+        super.init(request: UserAction.classrooms(name: name)) { response -> Result<Classroom> in
             if let data = response as? Data {
                 do {
-                    let classroomInfo = try JSONDecoder().decode(ClassroomsResponse.self, from: data)
+                    let classroomInfo = try JSONDecoder().decode(Classroom.self, from: data)
                     return Result.success(classroomInfo)
                 } catch {
                     return Result.failure(CustomError(value: error.localizedDescription))
@@ -70,10 +70,10 @@ class ClassroomsResource: Resource<ClassroomsResponse> {
     }
     
     init(id: Int) {
-        super.init(request: UserAction.classroom(id: id)) { response -> Result<ClassroomsResponse> in
+        super.init(request: UserAction.classroom(id: id)) { response -> Result<Classroom> in
             if let data = response as? Data {
                 do {
-                    let classroomInfo = try JSONDecoder().decode(ClassroomsResponse.self, from: data)
+                    let classroomInfo = try JSONDecoder().decode(Classroom.self, from: data)
                     return Result.success(classroomInfo)
                 } catch {
                     return Result.failure(CustomError(value: error.localizedDescription))

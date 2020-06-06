@@ -29,11 +29,11 @@ struct RequestService {
         api.request(LoginResource(user: user), completion: completion)
     }
     
-    func createClassroom(name: String, _ completion: @escaping (Result<ClassroomsResponse>) -> Void) {
+    func createClassroom(name: String, _ completion: @escaping (Result<Classroom>) -> Void) {
         api.request(ClassroomsResource(name: name), completion: completion)
     }
     
-    func obtainClassroom(id: Int, _ completion: @escaping (Result<ClassroomsResponse>) -> Void) {
+    func obtainClassroom(id: Int, _ completion: @escaping (Result<Classroom>) -> Void) {
         api.request(ClassroomsResource(id: id), completion: completion)
     }
     
