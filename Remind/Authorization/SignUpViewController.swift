@@ -147,7 +147,7 @@ class SignUpViewController: UIViewController, AnimationTextViewDelegate {
         } else if !usernameView.text.isValidUsername() {
             errorLabel.text = ErrorMessage.invalidUsernameNoLetter
         } else {
-            scrollToPage(.username)
+            scrollToPage(.password)
         }
     }
     
