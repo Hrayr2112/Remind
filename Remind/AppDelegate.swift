@@ -17,9 +17,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         UITabBar.appearance().tintColor = UIColor.main
         
-//         let vc = UIStoryboard(name: "Authorization", bundle: nil).instantiateInitialViewController()
-        // ARAM HRO TODO: add if to choose first view controller
-         let vc = UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController()
+        var vc: UIViewController?
+        if UserManager.shared.current() != nil {
+            vc = UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController()
+        } else {
+            vc = UIStoryboard(name: "Authorization", bundle: nil).instantiateInitialViewController()
+        }
         window?.rootViewController = vc
         
         return true
