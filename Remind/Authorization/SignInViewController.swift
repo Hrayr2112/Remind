@@ -91,6 +91,22 @@ class SignInViewController: UIViewController, AnimationTextViewDelegate {
         startIndicatorAnimation()
         let parameters = ["email": username, "password": password]
         print("LOGIN WITH PARAMS \(parameters)")
+        
+        let service = RequestService()
+        let newUser = NewUser(email: nil, username: username, password: password)
+        service.signIn(user: newUser) { result in
+            
+            self.progressIndicator.stopAnimating()
+            
+            switch result {
+            case let .success(response):
+                UserManager.shared.save(user: response.user)
+                UserManager.shared.set(token: response.token)
+                MainRoutingService.openApplication(from: self)
+            case let .failure(error):
+                self.errorLabel.text = error.localizedDescription
+            }
+        }
 //        Alamofire.request(Api.login, method: .post, parameters: parameters, encoding: JSONEncoding.default) .responseJSON { [weak self] (response) in
 //            self?.progressIndicator.stopAnimating()
 //            self?.loginButton.setTitle("Log In", for: .normal)
