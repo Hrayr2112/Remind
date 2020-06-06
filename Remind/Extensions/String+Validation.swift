@@ -25,4 +25,7 @@ extension String {
         return nameTest.evaluate(with: self)
     }
     
+    var localized: String {
+        return NSLocalizedString(self, comment: "")
+    }
 }
