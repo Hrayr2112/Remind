@@ -51,14 +51,14 @@ class ExploreViewController: UIViewController {
         mainCollectionView.register(cellType: PhotoCollectionViewCell.self)
         
         // TODO: This info should be loaded from Backend
-        photosViewModels = [PhotoCollectionViewCellModel(data: Image(id: 0, name: "10 класс")),
-                            PhotoCollectionViewCellModel(data: Image(id: 1, name: "11 класс")),
-                            PhotoCollectionViewCellModel(data: Image(id: 2, name: "10 класс")),
-                            PhotoCollectionViewCellModel(data: Image(id: 3, name: "11 класс")),
-                            PhotoCollectionViewCellModel(data: Image(id: 0, name: "10 класс")),
-                            PhotoCollectionViewCellModel(data: Image(id: 1, name: "11 класс")),
-                            PhotoCollectionViewCellModel(data: Image(id: 2, name: "10 класс")),
-                            PhotoCollectionViewCellModel(data: Image(id: 3, name: "11 класс"))]
+        photosViewModels = [PhotoCollectionViewCellModel(data: Image(id: 0, name: "10 класс а")),
+                            PhotoCollectionViewCellModel(data: Image(id: 1, name: "11 класс а")),
+                            PhotoCollectionViewCellModel(data: Image(id: 2, name: "10 класс б")),
+                            PhotoCollectionViewCellModel(data: Image(id: 3, name: "11 класс б")),
+                            PhotoCollectionViewCellModel(data: Image(id: 0, name: "10 класс в")),
+                            PhotoCollectionViewCellModel(data: Image(id: 1, name: "11 класс в")),
+                            PhotoCollectionViewCellModel(data: Image(id: 2, name: "10 класс г")),
+                            PhotoCollectionViewCellModel(data: Image(id: 3, name: "11 класс г"))]
         
         fakeImages = [UIImage(named: "family_one") ?? UIImage(),
                       UIImage(named: "family_two") ?? UIImage(),
@@ -68,6 +68,10 @@ class ExploreViewController: UIViewController {
                       UIImage(named: "family_six") ?? UIImage(),
                       UIImage(named: "family_seven") ?? UIImage(),
                       UIImage(named: "family_eight") ?? UIImage()]
+        
+        for i in 0..<photosViewModels.count {
+            ImageManager.saveImage(imageName: photosViewModels[i].name, image: fakeImages[i])
+        }
     }
 
 }
@@ -77,7 +81,7 @@ class ExploreViewController: UIViewController {
 extension ExploreViewController: UICollectionViewDelegate & UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let previewer = PhotoPreviewer(images: photosViewModels.map { $0.data }, preselectedIndex: indexPath.row )
+        let previewer = PhotoPreviewer(image: photosViewModels[indexPath.row].data, loadingType: .local)
         previewer.open(from: self)
     }
     

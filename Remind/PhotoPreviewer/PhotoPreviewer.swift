@@ -9,16 +9,46 @@
 import UIKit
 import QuickLook
 
+class PhotoPreviewerItem: NSObject, QLPreviewItem {
+    
+    var previewItemURL: URL?
+    
+    init(previewItemURL: URL) {
+        self.previewItemURL = previewItemURL
+    }
+    
+}
+
 class PhotoPreviewer: NSObject {
     
-    let images: [Image]
+    enum LoadingType {
+        case local
+        case remote
+    }
+    
+    let item: PhotoPreviewerItem?
     let preselectedIndex: Int
     
     // MARK: - Initialization
     
-    init(images: [Image], preselectedIndex: Int) {
-        self.images = images
-        self.preselectedIndex = preselectedIndex
+    init(image: Image, loadingType: LoadingType = .remote) {
+        switch loadingType {
+        case .local:
+            if let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first {
+                let fileName = image.name
+                let fileURL = documentsDirectory.appendingPathComponent(fileName.appending(".png"))
+                self.item = PhotoPreviewerItem(previewItemURL: fileURL)
+            } else {
+                self.item = nil
+            }
+        case .remote:
+            if let imageUrl = URL(string: image.imageUrl) {
+                self.item = PhotoPreviewerItem(previewItemURL: imageUrl)
+            } else {
+                self.item = nil
+            }
+        }
+        self.preselectedIndex = 0
     }
     
     // MARK: - Public
@@ -36,19 +66,12 @@ class PhotoPreviewer: NSObject {
 extension PhotoPreviewer: QLPreviewControllerDataSource {
     
     func numberOfPreviewItems(in controller: QLPreviewController) -> Int {
-        return images.count
+        return 1
     }
     
     func previewController(_ controller: QLPreviewController, previewItemAt index: Int) -> QLPreviewItem {
-        return images[index]
+        return item ?? PhotoPreviewerItem(previewItemURL: URL(string: "")!)
     }
     
 }
 
-extension Image: QLPreviewItem {
-    
-    var previewItemURL: URL? {
-        return URL(string: imageUrl)
-    }
-    
-}

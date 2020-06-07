@@ -251,7 +251,26 @@
                                     <outlet property="delegate" destination="lgT-Mb-0mX" id="5w9-qx-Smu"/>
                                 </connections>
                             </scrollView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1yd-95-DG8">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O01-JF-pRw">
+                                <rect key="frame" x="50" y="733" width="314" height="50"/>
+                                <color key="backgroundColor" name="main"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="iTf-6M-kcm"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Invite to Classroom">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="6"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="inviteToClassroomButtonTap" destination="lgT-Mb-0mX" eventType="touchUpInside" id="xiB-Ab-99e"/>
+                                </connections>
+                            </button>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1yd-95-DG8">
                                 <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rD7-mF-Jx0">
@@ -307,7 +326,9 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="0b2-Dc-y0A" secondAttribute="bottom" id="6A6-lJ-DgZ"/>
+                            <constraint firstItem="f7X-ok-F3y" firstAttribute="bottom" secondItem="O01-JF-pRw" secondAttribute="bottom" constant="30" id="EUi-lS-ysV"/>
                             <constraint firstItem="G7t-KZ-0Il" firstAttribute="leading" secondItem="f7X-ok-F3y" secondAttribute="leading" id="EdB-S4-Ihn"/>
+                            <constraint firstItem="O01-JF-pRw" firstAttribute="leading" secondItem="f7X-ok-F3y" secondAttribute="leading" constant="50" id="NJt-c1-ppf"/>
                             <constraint firstItem="f7X-ok-F3y" firstAttribute="trailing" secondItem="1yd-95-DG8" secondAttribute="trailing" id="RIl-6d-JOa"/>
                             <constraint firstItem="1yd-95-DG8" firstAttribute="top" secondItem="f7X-ok-F3y" secondAttribute="top" id="TUG-Tr-iqZ"/>
                             <constraint firstItem="0b2-Dc-y0A" firstAttribute="leading" secondItem="f7X-ok-F3y" secondAttribute="leading" id="UaO-cf-ZS3"/>
@@ -315,6 +336,7 @@
                             <constraint firstItem="1yd-95-DG8" firstAttribute="leading" secondItem="f7X-ok-F3y" secondAttribute="leading" id="VNP-QF-nAK"/>
                             <constraint firstItem="0b2-Dc-y0A" firstAttribute="top" secondItem="G7t-KZ-0Il" secondAttribute="bottom" id="WDB-Da-cYk"/>
                             <constraint firstItem="f7X-ok-F3y" firstAttribute="trailing" secondItem="G7t-KZ-0Il" secondAttribute="trailing" id="a7o-Mj-no3"/>
+                            <constraint firstItem="f7X-ok-F3y" firstAttribute="trailing" secondItem="O01-JF-pRw" secondAttribute="trailing" constant="50" id="nC3-Q1-ifr"/>
                             <constraint firstItem="f7X-ok-F3y" firstAttribute="bottom" secondItem="1yd-95-DG8" secondAttribute="bottom" id="nfx-HN-jpX"/>
                             <constraint firstItem="f7X-ok-F3y" firstAttribute="trailing" secondItem="0b2-Dc-y0A" secondAttribute="trailing" id="syo-qW-fwY"/>
                         </constraints>
@@ -415,7 +437,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="classroom_tab_bar" width="32" height="32"/>
+        <image name="classroom_tab_bar" width="25" height="25"/>
         <image name="default_avatar" width="160" height="160"/>
         <image name="explore_tab_bar" width="32" height="32"/>
         <image name="profile_tab_bar" width="32" height="32"/>

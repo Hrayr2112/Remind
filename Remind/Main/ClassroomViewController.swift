@@ -52,12 +52,12 @@ class ClassroomViewController: UIViewController {
         title = "Classroom"
         configureTableView()
         configureCollectionView()
-        loadData()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(true, animated: animated)
+        loadData()
     }
 
     override func viewWillDisappear(_ animated: Bool) {
@@ -210,6 +210,17 @@ class ClassroomViewController: UIViewController {
         present(ac, animated: true, completion: nil)
     }
     
+    @IBAction func inviteToClassroomButtonTap() {
+        guard let classroomId = UserManager.shared.classroomId else { return }
+        let text = "Join my classroom in reMind. Id: \(classroomId)"
+
+        let textToShare = [ text ]
+        let activityViewController = UIActivityViewController(activityItems: textToShare, applicationActivities: nil)
+        activityViewController.popoverPresentationController?.sourceView = view
+
+        present(activityViewController, animated: true, completion: nil)
+    }
+    
     private func presentErrorAlert() {
         let errorAc = UIAlertController(title: "Network connection error", message: nil, preferredStyle: .alert)
         errorAc.addAction(UIAlertAction(title: "OK", style: .default, handler: { _ in
@@ -275,7 +286,7 @@ extension ClassroomViewController: UICollectionViewDelegate & UICollectionViewDa
             vc.delegate = self
             present(vc, animated: true)
         } else {
-            let previewer = PhotoPreviewer(images: photosViewModels.map { $0.data }, preselectedIndex: indexPath.row )
+            let previewer = PhotoPreviewer(image: photosViewModels[indexPath.row].data)
             previewer.open(from: self)
         }
     }
