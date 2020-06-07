@@ -46,7 +46,7 @@ extension UserAction: APIAction {
         case let .uploadImage(_, _, userId):
             return "/api/v1/users/\(userId)/images"
         case let .image(id):
-            return "/image/\(id)"
+            return "/images/\(id)"
         case let .generate(_, id):
             return "/api/v1/generate/\(id)"
         case .explore:
