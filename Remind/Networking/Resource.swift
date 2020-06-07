@@ -70,7 +70,7 @@ class ClassroomsResource: Resource<Classroom> {
     }
     
     init(id: Int) {
-        super.init(request: UserAction.classroom(id: id)) { response -> Result<Classroom> in
+        super.init(request: UserAction.obtainClassroom(id: id)) { response -> Result<Classroom> in
             if let data = response as? Data {
                 do {
                     let classroomInfo = try JSONDecoder().decode(Classroom.self, from: data)
