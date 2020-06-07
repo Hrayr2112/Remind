@@ -89,8 +89,6 @@ class SignInViewController: UIViewController, AnimationTextViewDelegate {
         }
         setUserInterfaceEnabled(false)
         startIndicatorAnimation()
-        let parameters = ["email": username, "password": password]
-        print("LOGIN WITH PARAMS \(parameters)")
         
         let service = RequestService()
         let newUser = NewUser(email: nil, username: username, password: password)
@@ -108,6 +106,8 @@ class SignInViewController: UIViewController, AnimationTextViewDelegate {
                 MainRoutingService.openApplication(from: self)
             case let .failure(error):
                 self.errorLabel.text = error.localizedDescription
+                self.loginButton.setTitle("Log In", for: .normal)
+                self.setUserInterfaceEnabled(true)
             }
         }
 //        Alamofire.request(Api.login, method: .post, parameters: parameters, encoding: JSONEncoding.default) .responseJSON { [weak self] (response) in
@@ -128,8 +128,6 @@ class SignInViewController: UIViewController, AnimationTextViewDelegate {
 //            }
 //            self?.setUserInterfaceEnabled(true)
 //        }
-        // in completion
-        MainRoutingService.openApplication(from: self)
     }
     
     private func setUserInterfaceEnabled(_ enabled: Bool) {
