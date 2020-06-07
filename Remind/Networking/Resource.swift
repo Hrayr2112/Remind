@@ -135,13 +135,13 @@ class ConvertedImageResource: Resource<ConvertedImageResponse> {
     }
 }
 
-class GenerateResource: Resource<GenerateResponse> {
+class GenerateResource: Resource<Image> {
     
     init(background: String, classroomId: Int) {
-        super.init(request: UserAction.generate(background: background, classroomId: classroomId)) { response -> Result<GenerateResponse> in
+        super.init(request: UserAction.generate(background: background, classroomId: classroomId)) { response -> Result<Image> in
             if let data = response as? Data {
                 do {
-                    let generatedInfo = try JSONDecoder().decode(GenerateResponse.self, from: data)
+                    let generatedInfo = try JSONDecoder().decode(Image.self, from: data)
                     return Result.success(generatedInfo)
                 } catch {
                     return Result.failure(CustomError(value: error.localizedDescription))
