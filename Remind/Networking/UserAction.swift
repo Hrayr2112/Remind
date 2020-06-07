@@ -12,7 +12,7 @@ enum UserAction {
     case signUp(user: NewUser, confirmedPassword: String)
     case signIn(user: NewUser)
     case classrooms(name: String)
-    case classroom(id: Int)
+    case obtainClassroom(id: Int)
     case join(classroomId: Int)
     case uploadImage(name: String, content: String, userId: Int)
     case image(id: Int)
@@ -24,7 +24,7 @@ extension UserAction: APIAction {
     
     var method: HTTPMethod {
         switch self {
-        case .classroom, .explore, .image:
+        case .obtainClassroom, .explore, .image:
             return .get
         case .signUp, .signIn, .classrooms, .join, .uploadImage, .generate:
             return .post
@@ -39,8 +39,8 @@ extension UserAction: APIAction {
             return "/api/v1/signIn"
         case .classrooms:
             return "/api/v1/classrooms"
-        case let .classroom(id):
-            return "/api/v1/classrooms/\(id)}"
+        case let .obtainClassroom(id):
+            return "/api/v1/classrooms/\(id)"
         case let .join(id):
             return "/api/v1/classrooms/\(id)/join"
         case let .uploadImage(_, _, userId):
@@ -69,7 +69,7 @@ extension UserAction: APIAction {
             return ["name": name, "content": content]
         case let .generate(background, classroomId):
             return ["background": background, "classroomId": classroomId]
-        case .classroom, .join, .image, .explore:
+        case .obtainClassroom, .join, .image, .explore:
             return [:]
         }
     }
