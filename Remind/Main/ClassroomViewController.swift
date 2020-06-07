@@ -242,9 +242,7 @@ class ClassroomViewController: UIViewController {
     
     private func presentErrorAlert() {
         let errorAc = UIAlertController(title: "Network connection error", message: nil, preferredStyle: .alert)
-        errorAc.addAction(UIAlertAction(title: "OK", style: .default, handler: { _ in
-            self.createClassroomButtonTap()
-        }))
+        errorAc.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
         self.present(errorAc, animated: true, completion: nil)
     }
     
@@ -368,7 +366,7 @@ extension ClassroomViewController: UIImagePickerControllerDelegate, UINavigation
         RequestService().generate(background: base64, classroomId: classroomId) { result in
             switch result {
             case let .success(response):
-                self.photosViewModels.append(PhotoCollectionViewCellModel(data: response.image))
+                self.photosViewModels.append(PhotoCollectionViewCellModel(data: response))
             case let .failure(error):
                 self.presentErrorAlert()
             }

@@ -51,7 +51,7 @@ struct RequestService {
     
     func generate(background: String,
                   classroomId: Int,
-                  _ completion: @escaping (Result<GenerateResponse>) -> Void) {
+                  _ completion: @escaping (Result<Image>) -> Void) {
         api.request(GenerateResource(background: background, classroomId: classroomId), completion: completion)
     }
     
