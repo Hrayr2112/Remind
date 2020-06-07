@@ -32,10 +32,6 @@ class UserManager {
         return UserDefaults.standard.value(forKey: "password") as? String
     }
     
-    var images: [Image]? {
-        return UserDefaults.standard.value(forKey: "images") as? [Image]
-    }
-    
     var classroomId: Int? {
         return UserDefaults.standard.value(forKey: "classromId") as? Int
     }
@@ -75,10 +71,6 @@ class UserManager {
     
     func set(token: String) {
         UserDefaults.standard.setValue(token, forKey: "token")
-    }
-    
-    func set(images: [Image]) {
-        UserDefaults.standard.setValue(images, forKey: "images")
     }
     
     func set(imageId: Int) {

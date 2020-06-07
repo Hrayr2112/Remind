@@ -46,8 +46,9 @@ class MeViewController: UIViewController {
     private func fillData() {
         usernameLabel.text = UserManager.shared.username
         emailLabel.text = UserManager.shared.email
-        if let imageUrl = UserManager.shared.images?.first?.imageUrl {
-            avatarImageView.setImage(with: URL(string: imageUrl))
+        if let imageId  = UserManager.shared.imageId {
+            let image = Image(id: imageId, name: "")
+            avatarImageView.setImage(with: URL(string: image.imageUrl))
         }
     }
     
@@ -65,7 +66,7 @@ class MeViewController: UIViewController {
             { uploadImageResponse in
                 switch uploadImageResponse {
                 case .success(let response):
-                    UserManager.shared.set(images: [response.image])
+                    UserManager.shared.set(imageId: response.image.id)
                 case .failure(let error):
                     let errorAc = UIAlertController(title: error.localizedDescription, message: nil, preferredStyle: .alert)
                     errorAc.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
