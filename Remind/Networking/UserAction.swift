@@ -62,7 +62,12 @@ extension UserAction: APIAction {
                     "password": user.password,
                     "password_confirmation": confirmedPassword]
         case let .signIn(user):
-            return ["email": user.email ?? "", "username": user.username ?? "", "password": user.password]
+            
+            if let email = user.email, email != "" {
+                return ["email": email, "password": user.password]
+            } else {
+                return ["username": user.username ?? "", "password": user.password]
+            }
         case let .classrooms(name):
             return ["name": name]
         case let .uploadImage(name, content, _):
