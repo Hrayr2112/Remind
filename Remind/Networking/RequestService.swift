@@ -45,7 +45,7 @@ struct RequestService {
         api.request(UploadImageResource(name: name, content: content, userId: userId), completion: completion)
     }
     
-    func getImage(id: Int, _ completion: @escaping (Result<ConvertedImageResponse>) -> Void) {
+    func getImage(id: Int, _ completion: @escaping (Result<Image>) -> Void) {
         api.request(ConvertedImageResource(id: id), completion: completion)
     }
     

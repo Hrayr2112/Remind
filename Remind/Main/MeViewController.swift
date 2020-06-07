@@ -66,8 +66,8 @@ class MeViewController: UIViewController {
                 switch uploadImageResponse {
                 case .success(let response):
                     UserManager.shared.set(images: [response.image])
-                case .failure(_):
-                    let errorAc = UIAlertController(title: "Please enter a classroom name", message: nil, preferredStyle: .alert)
+                case .failure(let error):
+                    let errorAc = UIAlertController(title: error.localizedDescription, message: nil, preferredStyle: .alert)
                     errorAc.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
                     self.present(errorAc, animated: true, completion: nil)
                 }

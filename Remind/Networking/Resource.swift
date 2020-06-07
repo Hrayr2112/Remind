@@ -118,13 +118,13 @@ class UploadImageResource: Resource<UploadImageResponse> {
     }
 }
 
-class ConvertedImageResource: Resource<ConvertedImageResponse> {
+class ConvertedImageResource: Resource<Image> {
     
     init(id: Int) {
-        super.init(request: UserAction.image(id: id)) { response -> Result<ConvertedImageResponse> in
+        super.init(request: UserAction.image(id: id)) { response -> Result<Image> in
             if let data = response as? Data {
                 do {
-                    let convertedImageInfo = try JSONDecoder().decode(ConvertedImageResponse.self, from: data)
+                    let convertedImageInfo = try JSONDecoder().decode(Image.self, from: data)
                     return Result.success(convertedImageInfo)
                 } catch {
                     return Result.failure(CustomError(value: error.localizedDescription))
