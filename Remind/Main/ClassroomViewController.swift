@@ -212,7 +212,7 @@ class ClassroomViewController: UIViewController {
     
     @IBAction func inviteToClassroomButtonTap() {
         guard let classroomId = UserManager.shared.classroomId else { return }
-        let text = "Join my classroom in reMind. Id: \(classroomId)"
+        let text = "Join my classroom in reMind 😍 Id: \(classroomId)"
 
         let textToShare = [ text ]
         let activityViewController = UIActivityViewController(activityItems: textToShare, applicationActivities: nil)
