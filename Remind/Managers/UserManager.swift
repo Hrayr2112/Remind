@@ -78,7 +78,7 @@ class UserManager {
     }
     
     func set(images: [Image]) {
-        return UserDefaults.standard.setValue(images, forKey: "images")
+        UserDefaults.standard.setValue(images, forKey: "images")
     }
     
     func set(imageId: Int) {
