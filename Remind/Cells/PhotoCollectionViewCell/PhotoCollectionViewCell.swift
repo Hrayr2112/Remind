@@ -28,6 +28,9 @@ class PhotoCollectionViewCell: UICollectionViewCell, NibReusable {
     // MARK: - Configurations
 
     private func updateView(with viewModel: PhotoCollectionViewCellModel) {
-        imageView.image = viewModel.image
+        // This id indicates 'addImage' button should be shown
+        if viewModel.data.id != 100000000 {
+            imageView.setImage(with: URL(string: viewModel.imageUrl))
+        }
     }
 }

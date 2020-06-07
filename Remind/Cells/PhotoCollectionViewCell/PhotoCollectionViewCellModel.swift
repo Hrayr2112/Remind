@@ -16,10 +16,8 @@ struct PhotoCollectionViewCellModel {
         self.data = data
     }
     
-    var image: UIImage {
-        
-        // TODO: - Remove this shit
-        return UIImage(named: "family") ?? UIImage()
+    var imageUrl: String {
+        return data.imageUrl
     }
     
     var name: String {

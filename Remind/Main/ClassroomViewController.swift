@@ -251,6 +251,13 @@ class ClassroomViewController: UIViewController {
     private func handleClassromInfo(participants: [User], images: [Image], classroomId: Int) {
         peopleViewModels = participants.map({ PeopleTableViewCellModel(data: $0) })
         photosViewModels = images.map({ PhotoCollectionViewCellModel(data: $0) })
+        var viewModels = images.map({ PhotoCollectionViewCellModel(data: $0) })
+
+        // AddImageButton model
+        viewModels.append(PhotoCollectionViewCellModel(data: Image(id: 100000000, name: "")))
+        photosViewModels = viewModels
+        
+        photosCollectionView.reloadData()
         UserManager().set(classroomId: classroomId)
         noClassroomView.isHidden = true
     }
