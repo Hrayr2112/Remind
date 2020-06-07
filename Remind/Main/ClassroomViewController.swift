@@ -52,6 +52,7 @@ class ClassroomViewController: UIViewController {
         title = "Classroom"
         configureTableView()
         configureCollectionView()
+        configureRefreshControl()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -98,6 +99,8 @@ class ClassroomViewController: UIViewController {
     private func loadData() {
         if let classroomId = UserManager.shared.classroomId {
             RequestService().obtainClassroom(id: classroomId) { result in
+                self.photosCollectionView.refreshControl?.endRefreshing()
+                self.peopleTableView.refreshControl?.endRefreshing()
                 switch result {
                 case let .success(response):
                     self.handleClassromInfo(participants: response.participants,
@@ -111,6 +114,22 @@ class ClassroomViewController: UIViewController {
         } else {
             noClassroomView.isHidden = false
         }
+    }
+    
+    private func configureRefreshControl() {
+        let refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: #selector(handleRefreshControl),
+                                 for: .valueChanged)
+        peopleTableView.refreshControl = refreshControl
+        
+        let collectionRefreshControl = UIRefreshControl()
+        collectionRefreshControl.addTarget(self, action: #selector(handleRefreshControl),
+                                 for: .valueChanged)
+        peopleTableView.refreshControl = collectionRefreshControl
+    }
+        
+    @objc func handleRefreshControl() {
+        loadData()
     }
     
     // MARK: - Configurations
